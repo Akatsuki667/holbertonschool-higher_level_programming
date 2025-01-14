@@ -155,3 +155,35 @@ print(f"Middle word: {middle_word}")
 ### Expectation
 
 ### Result
+
+## 6. Create a new sentence
+Complete this source code to print object-oriented programming with Python, followed by a new line.
+### Source code
+```Python
+#!/usr/bin/python3
+str = "Python is an interpreted, interactive, object-oriented programming\
+ language that combines remarkable power with very clear syntax"
+# YOUR CODE GOES HERE. PLEASE REMOVE THIS LINE
+print(str)
+```
+
+### Objectives
+- You are not allowed to use any loops or conditional statements.
+- Your program should be exactly 5 lines long.
+- You are not allowed to create new variables.
+- You are not allowed to use string literals.
+
+### Expectation
+
+### Result
+
+
+## 7. Easter Egg
+Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
+
+### Objective
+- Your script should be maximum 98 characters long (please check with wc -m 9-easter_egg.py).
+
+### Expectation
+
+### Result
