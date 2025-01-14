@@ -151,3 +151,7 @@ print(f"Middle word: {middle_word}")
 - word_first_3 should contain the first 3 letters of the variable word.
 - word_last_2 should contain the last 2 letters of the variable word.
 - middle_word should contain the value of the variable word without the first and last letters.
+
+### Expectation
+
+### Result
