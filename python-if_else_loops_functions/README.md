@@ -81,7 +81,7 @@ else:
 ### Result
 ```bash
 ➜  python-if_else_loops_functions git:(main) ✗ ./1-last_digit.py
-Last digit of -3868 is 2 and is less than 6 and not 0
+Last digit of 8251 is 1 and is less than 6 and not 0
 ➜  python-if_else_loops_functions git:(main) ✗ ./1-last_digit.py
 Last digit of 2546 is 6 and is greater than 5
 ```
