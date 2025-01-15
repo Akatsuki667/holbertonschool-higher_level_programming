@@ -153,8 +153,23 @@ print(f"Middle word: {middle_word}")
 - middle_word should contain the value of the variable word without the first and last letters.
 
 ### Expectation
+```Python
+#!/usr/bin/python3
+word = "Holberton"
+word_first_3 = word[:3]
+word_last_2 = word[-2:]
+middle_word = word[1:-1]
+print(f"First 3 letters: {word_first_3}")
+print(f"Last 2 letters: {word_last_2}")
+print(f"Middle word: {middle_word}")
+```
 
 ### Result
+```bash
+First 3 letters: Hol
+Last 2 letters: on
+Middle word: olberto
+```
 
 ## 6. Create a new sentence
 Complete this source code to print object-oriented programming with Python, followed by a new line.
@@ -174,16 +189,20 @@ print(str)
 - You are not allowed to use string literals.
 
 ### Expectation
-
+```Pyhton
+#!/usr/bin/python3
+str = "Python is an interpreted, interactive, object-oriented programming\
+language that combines remarkable power with very clear syntax"
+str = str[39:54] + str[54:66] + str[105:111] + str[0:6]
+print(str)
+```
 ### Result
-
+```bash
+object-oriented programming with Python
+```
 
 ## 7. Easter Egg
 Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
 
 ### Objective
 - Your script should be maximum 98 characters long (please check with wc -m 9-easter_egg.py).
-
-### Expectation
-
-### Result
