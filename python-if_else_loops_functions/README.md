@@ -171,9 +171,12 @@ Write a program that prints numbers from 0 to 99.
 ```Python
 #!/usr/bin/python3
 for i in range(100):
-    print("{:02d}, ".format(i), end="")
+    if i < 99:
+        print("{:02d}, ".format(i), end="")
+    else:
+        print("{:02d}".format(i))
 ```
 ### Result
 ```bash
-00, 01, 02, 03, 04, 05...96, 97, 98, 99, %
+00, 01, 02, 03, 04, 05...96, 97, 98, 99
 ```
