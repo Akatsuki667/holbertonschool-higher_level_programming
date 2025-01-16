@@ -118,6 +118,12 @@ Write a program that prints the ASCII alphabet, in lowercase, not followed by a 
 
 ### Expectations
 ```Python
+#!/usr/bin/python3
+for a in range(97, 123):
+    if chr(a) not in {'e', 'q'}:
+        print("{}".format(chr(a)), end="")
 ```
 ### Result
 ```bash
+abcdfghijklmnoprstuvwxyz%
+```
