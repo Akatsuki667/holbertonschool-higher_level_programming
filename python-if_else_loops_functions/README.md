@@ -198,9 +198,17 @@ Write a program that prints all possible different combinations of two digits.
 
 ### Expectation
 ```Python
+#!/usr/bin/python3
+for i in range(10):
+    for j in range(i + 1, 10):
+        if i == 8 and j == 9:
+            print("{}{}".format(i, j))
+        else:
+            print("{}{}".format(i, j), end=", ")
 ```
 ### Result
 ```bash
+01, 02, 03, 04, 05,...69, 78, 79, 89
 ```
 
 # 7. islower
@@ -225,7 +233,6 @@ print("A is {}".format("lower" if islower("A") else "upper"))
 print("3 is {}".format("lower" if islower("3") else "upper"))
 print("g is {}".format("lower" if islower("g") else "upper"))
 ```
-
 ### Expectation
 ```Python
 #!/usr/bin/python3
@@ -243,4 +250,41 @@ H is upper
 A is upper
 3 is upper
 g is lower
+```
+
+# 8. To uppercase
+Write a function that prints a string in uppercase followed by a new line.
+
+### Objectives
+- Prototype: def uppercase(str):
+- You can only use no more than 2 print functions with string format.
+- You can only use one loop in your code.
+- You are not allowed to import any module.
+- You are not allowed to use str.upper() and str.isupper().
+- Tips: ord().
+
+### main.py
+```Python
+#!/usr/bin/env python3
+uppercase = __import__('8-uppercase').uppercase
+
+uppercase("best")
+uppercase("Best School 98 Battery street")
+```
+### Expectation
+```Python
+#!/usr/bin/python3
+def uppercase(str):
+    result = ""
+    for ch in str:
+        if ord(ch) >= 97 and ord(ch) <= 122:
+            result += chr(ord(ch) - 32)
+        else:
+            result += ch
+    print("{}".format(result))
+```
+### Result
+```bash
+BEST
+BEST SCHOOL 98 BATTERY STREET
 ```
