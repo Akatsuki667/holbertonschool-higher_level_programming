@@ -64,7 +64,7 @@ number = random.randint(-10000, 10000)
 		- if the last digit is less than 6 and not 0: the string and is less than 6 and not 0.
 	- Followed by a new line.
 
-### Expectations
+### Expectation
 ```Python
 #!/usr/bin/python3
 import random
@@ -95,7 +95,7 @@ Write a program that prints the ASCII alphabet, in lowercase, not followed by a 
 - You are not allowed to store characters in a variable.
 - You are not allowed to import any module.
 
-### Expectations
+### Expectation
 ```Python
 #!/usr/bin/python3
 for a in range(97, 123):
@@ -116,7 +116,7 @@ Write a program that prints the ASCII alphabet, in lowercase, not followed by a 
 - You are not allowed to store characters in a variable.
 - You are not allowed to import any module.
 
-### Expectations
+### Expectation
 ```Python
 #!/usr/bin/python3
 for a in range(97, 123):
@@ -127,3 +127,31 @@ for a in range(97, 123):
 ```bash
 abcdfghijklmnoprstuvwxyz%
 ```
+
+# 4. Hexadecimal printing
+Write a program that prints all numbers from 0 to 98 in decimal and in hexadecimal (as in the following example).
+
+### Objectives
+- You can only use one print function with string format.
+- You can only use one loop in your code.
+- You are not allowed to store numbers or strings in a variable.
+- You are not allowed to import any module.
+
+### Expectation
+```Python
+#!/usr/bin/python3
+for i in range(99):
+    print("{} = {}".format(i, hex(i)))
+
+```
+### Result
+```bash
+0 = 0x0
+1 = 0x1
+2 = 0x2
+...
+96 = 0x60
+97 = 0x61
+98 = 0x62
+```
+
