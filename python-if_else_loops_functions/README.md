@@ -180,3 +180,67 @@ for i in range(100):
 ```bash
 00, 01, 02, 03, 04, 05...96, 97, 98, 99
 ```
+
+# 6. Inventing is a combination of brains and materials. The more brains you use, the less material you need
+Write a program that prints all possible different combinations of two digits.
+
+### Objectives
+- Numbers must be separated by `,`, followed by a space.
+- The two digits must be different.
+- 01 and 10 are considered the same combination of the two digits 0 and 1.
+- Print only the smallest combination of two digits.
+- Numbers should be printed in ascending order, with two digits.
+- The last number should be followed by a new line.
+- You can only use no more than 3 print functions with string format.
+- You can only use no more than 2 loops in your code.
+- You are not allowed to store numbers or strings in a variable.
+- You are not allowed to import any module.
+
+### Expectation
+```Python
+```
+### Result
+```bash
+```
+
+# 7. islower
+Write a function that checks for lowercase character.
+
+### Objectives
+- Prototype: def islower(c):
+- Returns True if c is lowercase.
+- Returns False otherwise.
+- You are not allowed to import any module.
+- You are not allowed to use str.upper() and str.isupper().
+- Tips: ord().
+
+### main.py
+```Python
+#!/usr/bin/env python3
+islower = __import__('7-islower').islower
+
+print("a is {}".format("lower" if islower("a") else "upper"))
+print("H is {}".format("lower" if islower("H") else "upper"))
+print("A is {}".format("lower" if islower("A") else "upper"))
+print("3 is {}".format("lower" if islower("3") else "upper"))
+print("g is {}".format("lower" if islower("g") else "upper"))
+```
+
+### Expectation
+```Python
+#!/usr/bin/python3
+def islower(c):
+    conversion = ord(c)
+    if conversion in range(97, 123):
+        return True
+    else:
+        return False
+```
+### Result
+```bash
+a is lower
+H is upper
+A is upper
+3 is upper
+g is lower
+```
