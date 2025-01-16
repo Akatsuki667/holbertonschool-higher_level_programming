@@ -85,3 +85,23 @@ Last digit of 8251 is 1 and is less than 6 and not 0
 ➜  python-if_else_loops_functions git:(main) ✗ ./1-last_digit.py
 Last digit of 2546 is 6 and is greater than 5
 ```
+
+## 2. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game
+Write a program that prints the ASCII alphabet, in lowercase, not followed by a new line.
+
+### Objectives
+- Use only one print function with string format.
+- Use only one loop in your code.
+- You are not allowed to store characters in a variable.
+- You are not allowed to import any module.
+
+### Expectations
+```Python
+#!/usr/bin/python3
+for a in range(97, 123):
+    print("{}".format(chr(a)), end="")
+```
+### Result
+```bash
+abcdefghijklmnopqrstuvwxyz
+```
