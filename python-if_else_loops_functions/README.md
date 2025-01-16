@@ -106,7 +106,7 @@ for a in range(97, 123):
 abcdefghijklmnopqrstuvwxyz%
 ```
 
-# 3. When I was having that alphabet soup, I never thought that it would pay off
+## 3. When I was having that alphabet soup, I never thought that it would pay off
 Write a program that prints the ASCII alphabet, in lowercase, not followed by a new line.
 
 ### Objectives
@@ -128,7 +128,7 @@ for a in range(97, 123):
 abcdfghijklmnoprstuvwxyz%
 ```
 
-# 4. Hexadecimal printing
+## 4. Hexadecimal printing
 Write a program that prints all numbers from 0 to 98 in decimal and in hexadecimal (as in the following example).
 
 ### Objectives
@@ -155,3 +155,25 @@ for i in range(99):
 98 = 0x62
 ```
 
+## 5. 00...99
+Write a program that prints numbers from 0 to 99.
+
+### Objectives
+- Numbers must be separated by ,, followed by a space.
+- Numbers should be printed in ascending order, with two digits.
+- The last number should be followed by a new line.
+- You can only use no more than 2 print functions with string format.
+- You can only use one loop in your code.
+- You are not allowed to store numbers or strings in a variable.
+- You are not allowed to import any module.
+
+### Expectation
+```Python
+#!/usr/bin/python3
+for i in range(100):
+    print("{:02d}, ".format(i), end="")
+```
+### Result
+```bash
+00, 01, 02, 03, 04, 05...96, 97, 98, 99, %
+```
