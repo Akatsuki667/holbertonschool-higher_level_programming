@@ -181,7 +181,7 @@ for i in range(100):
 00, 01, 02, 03, 04, 05...96, 97, 98, 99
 ```
 
-# 6. Inventing is a combination of brains and materials. The more brains you use, the less material you need
+## 6. Inventing is a combination of brains and materials. The more brains you use, the less material you need
 Write a program that prints all possible different combinations of two digits.
 
 ### Objectives
@@ -211,11 +211,11 @@ for i in range(10):
 01, 02, 03, 04, 05,...69, 78, 79, 89
 ```
 
-# 7. islower
+## 7. islower
 Write a function that checks for lowercase character.
 
 ### Objectives
-- Prototype: def islower(c):
+- Prototype: `def islower(c)`:
 - Returns True if c is lowercase.
 - Returns False otherwise.
 - You are not allowed to import any module.
@@ -252,11 +252,11 @@ A is upper
 g is lower
 ```
 
-# 8. To uppercase
+## 8. To uppercase
 Write a function that prints a string in uppercase followed by a new line.
 
 ### Objectives
-- Prototype: def uppercase(str):
+- Prototype: `def uppercase(str)`:
 - You can only use no more than 2 print functions with string format.
 - You can only use one loop in your code.
 - You are not allowed to import any module.
@@ -287,4 +287,132 @@ def uppercase(str):
 ```bash
 BEST
 BEST SCHOOL 98 BATTERY STREET
+```
+
+## 9. There are only 3 colors, 10 digits, and 7 notes; it's what we do with them that's important
+Write a function that prints the last digit of a number.
+
+### Objectives
+- Prototype: `def print_last_digit(number)`:
+- Returns the value of the last digit
+- You are not allowed to import any module
+
+### main.py
+```Python
+#!/usr/bin/env python3
+print_last_digit = __import__('9-print_last_digit').print_last_digit
+
+print_last_digit(98)
+print_last_digit(0)
+r = print_last_digit(-1024)
+print(r)
+```
+### Expectation
+```Python
+```
+### Result
+```bash
+```
+
+## 10. a + b
+Write a function that adds two integers and returns the result.
+
+### Objectives
+- Prototype: `def add(a, b)`:
+- Returns the value of a + b
+- You are not allowed to import any module
+
+### main.py
+```Python
+#!/usr/bin/env python3
+add = __import__('10-add').add
+
+print(add(1, 2))
+print(add(98, 0))
+print(add(100, -2))
+```
+### Expectation
+```Python
+#!/usr/bin/python3
+def add(a, b):
+    return a + b
+```
+### Result
+```bash
+3
+98
+98
+```
+
+## 11. a ^ b
+Write a function that computes a to the power of b and return the value.
+
+### Objectives
+- Prototype: `def pow(a, b)`:
+- Returns the value of a ^ b.
+- You are not allowed to import any module.
+
+### main.py
+```Python
+#!/usr/bin/env python3
+pow = __import__('11-pow').pow
+
+print(pow(2, 2))
+print(pow(98, 2))
+print(pow(98, 0))
+print(pow(100, -2))
+print(pow(-4, 5))
+```
+### Expectation
+```Python
+#!/usr/bin/python3
+def pow(a, b):
+    return a ** b
+```
+### Result
+```bash
+4
+9604
+1
+0.0001
+-1024
+
+```
+
+## 12. Fizz Buzz
+Write a function that prints the numbers from 1 to 100 separated by a space.
+
+### Objectives
+- For multiples of three print Fizz instead of the number and for multiples of five print Buzz.
+- For numbers which are multiples of both three and five print FizzBuzz.
+- Prototype: `def fizzbuzz()`:
+- Each element should be followed by a space.
+- You are not allowed to import any module.
+
+### main.py
+```Python
+#!/usr/bin/env python3
+fizzbuzz = __import__('12-fizzbuzz').fizzbuzz
+
+fizzbuzz()
+print("")
+```
+### Expectation
+```Python
+#!/usr/bin/python3
+def fizzbuzz():
+    for i in range(100):
+        if i % 3 == 0 and i % 5 == 0:
+            print("FizzBuzz ", end="")
+        elif i % 3 == 0:
+            print("Fizz ", end="")
+        elif i % 5 == 0:
+            print("Buzz ", end="")
+        else:
+            print(i, end=" ")
+
+```
+### Result
+```bash
+1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz19 Buzz Fizz 22 23 Fizz Buzz 26 Fizz 28 29 FizzBuzz 31 32 Fizz 34 Buzz Fizz 37 38 Fizz Buzz 41 Fizz 43 44 FizzBuzz 46 47 Fizz 49 Buzz Fizz 52 53 Fizz Buzz 56 Fizz 58 59 FizzBuzz 61 62 Fizz 64 Buzz Fizz 67 68 Fizz Buzz 71 Fizz 73 74 FizzBuzz 76 77 Fizz 79 Buzz Fizz 82 83 Fizz Buzz 86 Fizz 88 89 FizzBuzz 91 92 Fizz 94 Buzz Fizz 97 98 Fizz 
 ```
