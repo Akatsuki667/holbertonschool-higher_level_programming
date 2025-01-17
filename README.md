@@ -78,3 +78,33 @@
 ### 10. a + b
 ### 11. a ^ b
 ### 12. Fizz Buzz
+
+
+# Python - import & modules
+
+## Learning Objectives
+
+### General
+- Why Python programming is awesome.
+- How to import functions from another file.
+- How to use imported functions.
+- How to create a module.
+- How to use the built-in function dir().
+- How to prevent code in your script from being executed when imported.
+- How to use command line arguments with your Python programs.
+
+## Requirements
+
+### General
+- All your files should end with a new line.
+- The first line of all your files should be exactly #!/usr/bin/python3.
+- A README.md file at the root of the repo, containing a description of the repository.
+- A README.md file, at the root of the folder of this project, is mandatory.
+- Your code should use the pycodestyle (version 2.7.).
+- All your files must be executable.
+- The length of your files will be tested using wc.
+
+## TASKS
+
+### 0. Import a simple function from a simple file
+### 1. My first toolbox!
