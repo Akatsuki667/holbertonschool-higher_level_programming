@@ -309,9 +309,15 @@ print(r)
 ```
 ### Expectation
 ```Python
+#!/usr/bin/python3
+def print_last_digit(number):
+    last_digit = abs(number) % 10
+    print(last_digit, end="")
+    return last_digit
 ```
 ### Result
 ```bash
+8044
 ```
 
 ## 10. a + b
@@ -409,7 +415,7 @@ def fizzbuzz():
         elif i % 5 == 0:
             print("Buzz ", end="")
         else:
-            print(i, end=" ")
+            print("{}".format(i), end=" ")
 
 ```
 ### Result
