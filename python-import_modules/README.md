@@ -157,8 +157,7 @@ import sys
 
 if __name__ == "__main__":
 
-    count = len(sys.argv)
-    arg = count - 1
+    arg = len(sys.argv) - 1
 
     if arg == 0:
         print("0 arguments.")
@@ -166,8 +165,8 @@ if __name__ == "__main__":
         print("1 argument:")
     else:
         print("{} arguments:".format(arg))
-    for i in range(1, count):
-        print("{}: {}".format(i, sys.argv[i]))
+    for i in range(0, arg):
+        print("{}: {}".format(i + 1, sys.argv[i + 1]))
 ```
 ### Result
 ```bash
@@ -177,4 +176,29 @@ if __name__ == "__main__":
 2: bonjour
 ```
 
+## 3. Infinite addition
+Write a program that prints the result of the addition of all arguments.
+
+### Objectives
+- The output should be the result of the addition of all arguments, followed by a new line
+- You can cast arguments into integers by using int() (you can assume that all arguments can be casted into integers)
+- Your code should not be executed when imported
+
+### Expectation
+```Python
+#!/usr/bin/python3
+import sys
+
+if __name__ == "__main__":
+
+    result = 0
+    for i in range(1, len(sys.argv)):
+        result += int(sys.argv[i])
+    print("{}".format(result))
+```
+### Result
+```bash
+➜  python-import_modules git:(main) ✗ ./3-infinite_add.py 3 3 33 
+39
+```
 
