@@ -202,3 +202,47 @@ if __name__ == "__main__":
 39
 ```
 
+## 4. Who are you?
+Write a program that prints all the names defined by the compiled module hidden_4.pyc (please download it locally in your sandbox using curl).
+
+### Objectives
+- This task must be done on the sandbox only
+- File 4-hidden_discovery.py must be located on the folder /tmp/
+- You should print one name per line, in alpha order
+- You should print only names that do not start with __
+- Your code should not be executed when imported
+
+### Expectation
+```Python
+```
+### Result
+```bash
+```
+
+## 5. Everything can be imported
+Write a program that imports the variable a from the file variable_load_5.py and prints its value.
+### variable_load_5.py
+```Python
+#!/usr/bin/python3
+a = 98
+"""Simple variable
+"""
+```
+
+### Objectives
+- You are not allowed to use * for importing or __import__
+- Your code should not be executed when imported
+
+### Expectation
+```Python
+#!/usr/bin/python3
+import variable_load_5
+
+if __name__ == "__main__":
+
+    print("{}".format(variable_load_5.a))
+```
+### Result
+```bash
+98
+```
