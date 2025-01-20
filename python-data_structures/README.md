@@ -136,3 +136,53 @@ def new_in_list(my_list, idx, element):
 [1, 2, 3, 9, 5]
 [1, 2, 3, 4, 5]
 ```
+
+## 5. Can you C me now?
+Write a function that removes all characters c and C from a string.
+
+### Objectives
+- Prototype: `def no_c(my_string)`:
+- The function should return the new string
+- You are not allowed to import any module
+- You are not allowed to use `str.replace()`
+
+### Expectation
+```Python
+#!/usr/bin/python3
+def no_c(my_string):
+    result = ""
+    for a in my_string:
+        if a not in {'c', 'C'}:
+            result += a
+    return result
+```
+### Result
+```bash
+Best Shool
+hiago
+ is fun!
+```
+
+## 6. Lists of lists = Matrix
+Write a function that prints a matrix of integers.
+
+### Objectives
+- Prototype: `def print_matrix_integer(matrix=[[]])`:
+- Format: see example
+- You are not allowed to import any module
+- You can assume that the list only contains integers
+- You are not allowed to cast integers into strings
+- You have to use `str.format()` to print integers
+
+### Expectation
+```Python
+```
+### Result
+```bash
+1 2 3$
+4 5 6$
+7 8 9$
+--$
+$
+```
+
