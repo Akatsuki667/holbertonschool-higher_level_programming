@@ -80,3 +80,51 @@ def replace_in_list(my_list, idx, element):
 [1, 2, 3, 9, 5]
 [1, 2, 3, 9, 5]
 ```
+
+## 3. Print a list of integers... in reverse!
+Write a function that prints all integers of a list, in reverse order.
+
+### Objectives
+- Prototype: `def print_reversed_list_integer(my_list=[])`:
+- Format: one integer per line. See example
+- You are not allowed to import any module
+- You can assume that the list only contains integers
+- You are not allowed to cast integers into strings
+- You have to use `str.format()` to print integers
+
+### Expectation
+```Python
+#!/usr/bin/python3
+def print_reversed_list_integer(my_list=[]):
+    for x in my_list[::-1]:
+        print("{}".format(x))
+```
+### Result
+```bash
+5
+4
+3
+2
+1
+```
+
+## 4. Replace in a copy
+Write a function that replaces an element in a list at a specific position without modifying the original list.
+
+### Objectives
+- Prototype: `def new_in_list(my_list, idx, element)`:
+- If `idx` is negative, the function should return a copy of the original `list`
+- If `idx` is out of range (> of number of element in `my_list`), the function should return a copy of the original `list`
+- You are not allowed to import any module
+- You are not allowed to use `try/except`
+
+### Expectation
+```Python
+```
+### Result
+```bash
+[1, 2, 3, 9, 5]
+[1, 2, 3, 4, 5]
+```
+
+
