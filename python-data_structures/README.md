@@ -216,3 +216,47 @@ Write a function that adds 2 tuples.
 (2, 89)
 (1, 89)
 ```
+
+## 8. More returns!
+Write a function that returns a tuple with the length of a string and its first character.
+
+### Objectives
+- Prototype: `def multiple_returns(sentence):`
+- If the sentence is empty, the first character should be equal to `None`
+- You are not allowed to import any module
+
+### Expectation
+```Python
+```
+### Result
+```bash
+Length: 22 - First character: A
+```
+
+## 9. Find the max
+Write a function that finds the biggest integer of a list.
+
+### Objectives
+- Prototype: `def max_integer(my_list=[]):`
+- If the list is empty, return `None`
+- You can assume that the list only contains integers
+- You are not allowed to import any module
+- You are not allowed to use the builtin `max()`
+
+### Expectation
+```Python
+#!/usr/bin/python3
+def max_integer(my_list=[]):
+    if my_list == 0:
+        return None
+    else:
+        max = 0
+        for i in my_list:
+            if i > max:
+                max = i
+        return max
+```
+### Result
+```bash
+Max: 90
+```
