@@ -16,7 +16,7 @@ Write a function that prints all integers of a list.
 #!/usr/bin/python3
 def print_list_integer(my_list=[]):
     for x in my_list:
-        print("{}".format(x))
+        print("{:d}".format(x))
 ```
 ### Result
 ```bash
@@ -43,7 +43,7 @@ Write a function that retrieves an element from a list.
 def element_at(my_list, idx):
     if idx < 0:
         return None
-    elif idx > len(my_list):
+    elif idx >= len(my_list):
         return None
     else:
         return my_list[idx]
@@ -69,7 +69,7 @@ Write a function that replaces an element of a list at a specific position.
 def replace_in_list(my_list, idx, element):
     if idx < 0:
         return my_list
-    elif idx > len(my_list):
+    elif idx >= len(my_list):
         return my_list
     else:
         my_list[idx] = element
@@ -97,7 +97,7 @@ Write a function that prints all integers of a list, in reverse order.
 #!/usr/bin/python3
 def print_reversed_list_integer(my_list=[]):
     for x in my_list[::-1]:
-        print("{}".format(x))
+        print("{:d}".format(x))
 ```
 ### Result
 ```bash
@@ -124,7 +124,7 @@ Write a function that replaces an element in a list at a specific position witho
 def new_in_list(my_list, idx, element):
     if idx < 0:
         return my_list.copy()
-    elif idx > len(my_list):
+    elif idx >= len(my_list):
         return my_list.copy()
     else:
         copy_list = my_list.copy()
@@ -182,7 +182,7 @@ def print_matrix_integer(matrix=[[]]):
     j = 0
     for i in matrix:
         for j in i:
-            print("{} ".format(j), end=" ")
+            print("{:d} ".format(j), end=" ")
         print("\n")
 ```
 ### Result
