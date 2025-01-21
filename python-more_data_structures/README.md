@@ -185,22 +185,68 @@ number: 89
 track: Low level
 ```
 
-##
+## 8. Simple delete by key
+Write a function that deletes a key in a dictionary.
+
 ### Objectives
+- Prototype: `def simple_delete(a_dictionary, key=""):`
+- `key` argument will be always a string
+- If a key doesn’t exist, the dictionary won’t change
+- You are not allowed to import any module
+
 ### Expectation
 ```Python
 ```
 ### Result
 ```bash
+Number: 89
+ids: [1, 2, 3]
+language: C
+--
+Number: 89
+ids: [1, 2, 3]
+language: C
+--
+--
+Number: 89
+ids: [1, 2, 3]
+language: C
+--
+Number: 89
+ids: [1, 2, 3]
+language: C
+
 ```
 
-##
+## 9. Multiply by 2
+Write a function that returns a new dictionary with all values multiplied by 2.
+
 ### Objectives
+- Prototype: `def multiply_by_2(a_dictionary):`
+- You can assume that all values are only integers
+- Returns a new dictionary
+- You are not allowed to import any module
+
 ### Expectation
 ```Python
+#!/usr/bin/python3
+def multiply_by_2(a_dictionary):
+    b_dictionary = {key: value * 2 for key, value in a_dictionary.items()}
+    return b_dictionary
 ```
 ### Result
 ```bash
+Alex: 8
+Bob: 14
+John: 12
+Mike: 14
+Molly: 16
+--
+Alex: 16
+Bob: 28
+John: 24
+Mike: 28
+Molly: 32
 ```
 ##
 ### Objectives
