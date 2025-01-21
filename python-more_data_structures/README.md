@@ -215,7 +215,6 @@ language: C
 Number: 89
 ids: [1, 2, 3]
 language: C
-
 ```
 
 ## 9. Multiply by 2
@@ -293,11 +292,22 @@ def multiply_list_map(my_list=[], number=0):
 [1, 2, 3, 4, 6]
 ```
 
-##
+## 12. Roman to Integer
+Create a function def roman_to_int(roman_string): that converts a Roman numeral to an integer.
+
 ### Objectives
+- You can assume the number will be between 1 to 3999.
+- `def roman_to_int(roman_string)` must return an integer
+- If the `roman_string` is not a string or `None`, return 0
+
 ### Expectation
 ```Python
 ```
 ### Result
 ```bash
+X = 10
+VII = 7
+IX = 9
+LXXXVII = 87
+DCCVII = 707
 ```
