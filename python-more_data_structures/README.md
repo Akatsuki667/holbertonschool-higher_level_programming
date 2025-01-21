@@ -248,22 +248,49 @@ John: 24
 Mike: 28
 Molly: 32
 ```
-##
+## 10. Best score
+Write a function that returns a key with the biggest integer value.
+
 ### Objectives
+- Prototype: `def best_score(a_dictionary):`
+- You can assume that all values are only integers
+- If no score found, return `None`
+- You can assume all students have a different score
+- You are not allowed to import any module
+
 ### Expectation
 ```Python
 ```
 ### Result
 ```bash
+Best score: Molly
+Best score: None
 ```
 
-##
+## 11. Multiply by using map
+Write a function that returns a list with all values multiplied by a number without using any loops.
+
 ### Objectives
+- Prototype: `def multiply_list_map(my_list=[], number=0):`
+- Returns a new list:
+    - Same length as `my_list`
+    - Each value should be multiplied by `number`
+- Initial list should not be modified
+- You are not allowed to import any module
+- You have to use `map`
+- Your file should be max 3 lines
+
 ### Expectation
 ```Python
+#!/usr/bin/python3
+def multiply_list_map(my_list=[], number=0):
+    new_list = map(lambda x: x * number, my_list)
+    return list(new_list)
 ```
 ### Result
 ```bash
+[4, 8, 12, 16, 24]
+[1, 2, 3, 4, 6]
 ```
 
 ##
