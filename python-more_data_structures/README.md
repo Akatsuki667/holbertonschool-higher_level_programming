@@ -36,10 +36,11 @@ Write a function that replaces all occurrences of an element by another in a new
 ```Python
 #!/usr/bin/python3
 def search_replace(my_list, search, replace):
-    for idx, item in enumerate(my_list):
+    new_list = my_list.copy()
+    for idx, item in enumerate(new_list):
         if item == search:
-            my_list[idx] = replace
-    return my_list
+            new_list[idx] = replace
+    return new_list
 ```
 ### Result
 ```bash
@@ -95,7 +96,7 @@ Write a function that returns a set of all elements present in only one set.
 ```Python
 #!/usr/bin/python3
 def only_diff_elements(set_1, set_2):
-    return set_1.union(set_2)
+    return set_1.symmetric_difference(set_2)
 ```
 ### Result
 ```bash
@@ -283,8 +284,7 @@ Write a function that returns a list with all values multiplied by a number with
 ```Python
 #!/usr/bin/python3
 def multiply_list_map(my_list=[], number=0):
-    new_list = map(lambda x: x * number, my_list)
-    return list(new_list)
+    return list(map(lambda x: x * number, my_list))
 ```
 ### Result
 ```bash
