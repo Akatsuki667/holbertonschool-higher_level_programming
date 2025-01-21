@@ -123,13 +123,66 @@ def number_keys(a_dictionary):
 Number of keys: 3
 ```
 
-##
+## 6. Print sorted dictionary
+Write a function that prints a dictionary by ordered keys.
+
 ### Objectives
+- Prototype: `def print_sorted_dictionary(a_dictionary):`
+- You can assume that all keys are strings
+- Keys should be sorted by alphabetic order
+- Only sort keys of the first level (don’t sort keys of a dictionary inside the main dictionary)
+- Dictionary values can have any type
+- You are not allowed to import any module
+
+### Expectation
+```Python
+#!/usr/bin/python3
+def print_sorted_dictionary(a_dictionary):
+    for key, value in sorted(a_dictionary.items()):
+        print("{}: {}".format(key, value))
+```
+### Result
+```bash
+Number: 89
+ids: [1, 2, 3]
+language: C
+track: Low level
+```
+
+## 7. Update dictionary
+Write a function that replaces or adds key/value in a dictionary.
+
+### Objectives
+- Prototype: `def update_dictionary(a_dictionary, key, value):`
+- `key` argument will be always a string
+- `value` argument will be any type
+- If a key exists in the dictionary, the value will be replaced
+- If a key doesn’t exist in the dictionary, it will be created
+- You are not allowed to import any module
+
 ### Expectation
 ```Python
 ```
 ### Result
 ```bash
+language: Python
+number: 89
+track: Low level
+--
+language: Python
+number: 89
+track: Low level
+--
+--
+city: San Francisco
+language: Python
+number: 89
+track: Low level
+--
+city: San Francisco
+language: Python
+number: 89
+track: Low level
 ```
 
 ##
@@ -149,7 +202,6 @@ Number of keys: 3
 ### Result
 ```bash
 ```
-
 ##
 ### Objectives
 ### Expectation
@@ -158,6 +210,7 @@ Number of keys: 3
 ### Result
 ```bash
 ```
+
 ##
 ### Objectives
 ### Expectation
