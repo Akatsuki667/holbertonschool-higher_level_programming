@@ -84,13 +84,22 @@ def common_elements(set_1, set_2):
 ['C']
 ```
 
-##
+## 4. Only differents
+Write a function that returns a set of all elements present in only one set.
+
 ### Objectives
+- Prototype: `def only_diff_elements(set_1, set_2):`
+- You are not allowed to import any module
+
 ### Expectation
 ```Python
+#!/usr/bin/python3
+def only_diff_elements(set_1, set_2):
+    return set_1.union(set_2)
 ```
 ### Result
 ```bash
+['Bash', 'Javascript', 'Perl', 'Python', 'Ruby']
 ```
 
 ##
