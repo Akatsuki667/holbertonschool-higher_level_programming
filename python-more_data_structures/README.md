@@ -102,13 +102,25 @@ def only_diff_elements(set_1, set_2):
 ['Bash', 'Javascript', 'Perl', 'Python', 'Ruby']
 ```
 
-##
+## 5. Number of keys
+Write a function that returns the number of keys in a dictionary.
+
 ### Objectives
+- Prototype: `def number_keys(a_dictionary):`
+- You are not allowed to import any module
+
 ### Expectation
 ```Python
+#!/usr/bin/python3
+def number_keys(a_dictionary):
+    sum_of_keys = 0
+    for key in a_dictionary:
+        sum_of_keys += 1
+    return sum_of_keys
 ```
 ### Result
 ```bash
+Number of keys: 3
 ```
 
 ##
