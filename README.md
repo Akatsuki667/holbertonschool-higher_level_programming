@@ -250,3 +250,39 @@
 ### 10. Best score
 ### 11. Multiply by using map
 ### 12. Roman to Integer
+
+
+# Python - Exceptions
+
+## Learning Objectives
+
+### General
+- Why Python programming is awesome
+- What’s the difference between errors and exceptions
+- What are exceptions and how to use them
+- When do we need to use exceptions
+- How to correctly handle an exception
+- What’s the purpose of catching exceptions
+- How to raise a builtin exception
+- When do we need to implement a clean-up action after an exception
+
+## Requirements
+
+### General
+- All your files should end with a new line.
+- The first line of all your files should be exactly #!/usr/bin/python3.
+- A README.md file at the root of the repo, containing a description of the repository.
+- A README.md file, at the root of the folder of this project, is mandatory.
+- Your code should use the pycodestyle (version 2.7.).
+- All your files must be executable.
+- The length of your files will be tested using wc.
+
+## TASKS
+
+### 0. Safe list printing
+### 1. Safe printing of an integers list
+### 2. Print and count integers
+### 3. Integers division with debug
+### 4. Divide a list
+### 5. Raise exception
+### 6. Raise a message
