@@ -190,20 +190,27 @@ Write a function that raises a type exception.
 ```Python
 #!/usr/bin/python3
 def raise_exception():
-    x = "hello"
-    if not type(x) is int:
-        raise TypeError
+    raise TypeError
 ```
 ### Result
 ```bash
 Exception raised
 ```
 
-##
+## 6. Raise a message
+Write a function that raises a name exception with a message.
+
 ### Objectives
+- Prototype: `def raise_exception_msg(message=""):`
+- You are not allowed to import any module
+
 ### Expectation
 ```Python
+#!/usr/bin/python3
+def raise_exception_msg(message=""):
+    raise NameError("{}".format(message))
 ```
 ### Result
 ```bash
+C is fun
 ```
