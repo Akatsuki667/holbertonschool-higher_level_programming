@@ -179,13 +179,24 @@ out of range
 [5.0, 0, 0, 2.0, 0]
 ```
 
-##
+## 5. Raise exception
+Write a function that raises a type exception.
+
 ### Objectives
+- Prototype: `def raise_exception():`
+- You are not allowed to import any module
+
 ### Expectation
 ```Python
+#!/usr/bin/python3
+def raise_exception():
+    x = "hello"
+    if not type(x) is int:
+        raise TypeError
 ```
 ### Result
 ```bash
+Exception raised
 ```
 
 ##
