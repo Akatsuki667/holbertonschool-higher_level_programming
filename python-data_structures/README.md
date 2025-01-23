@@ -346,11 +346,23 @@ def delete_at(my_list=[], idx=0):
 [1, 2, 3, 5]
 ```
 
-##
+## 12. Switch
+Complete the source code in order to switch value of a and b.
+
 ### Objectives
+- You can find the source code here
+- Your code should be inserted where the comment is (line 4)
+- Your program should be exactly 5 lines long
+
 ### Expectation
 ```Python
+#!/usr/bin/python3
+a = 89
+b = 10
+b, a = a, b
+print("a={:d} - b={:d}".format(a, b))
 ```
 ### Result
 ```bash
+a=10 - b=89
 ```
