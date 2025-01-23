@@ -319,3 +319,38 @@ def divisible_by_2(my_list=[]):
 5 is not divisible by 2
 6 is divisible by 2
 ```
+
+## 11. Delete at
+Write a function that deletes the item at a specific position in a list.
+
+### Objectives
+Prototype: `def delete_at(my_list=[], idx=0):`
+If `idx` is negative or out of range, nothing change (returns the same list)
+You are not allowed to use `pop()`
+You are not allowed to import any module
+
+### Expectation
+```Python
+#!/usr/bin/python3
+def delete_at(my_list=[], idx=0):
+
+    if idx < 0 or idx >= len(my_list):
+        return my_list
+
+    del my_list[idx]
+    return my_list
+```
+### Result
+```bash
+[1, 2, 3, 5]
+[1, 2, 3, 5]
+```
+
+##
+### Objectives
+### Expectation
+```Python
+```
+### Result
+```bash
+```
