@@ -7,6 +7,7 @@ Ce module contient une fonction `add_integer(a, b=98)`
 Cette fonction additionne valeur de `type_int`
 """
 
+
 def add_integer(a, b=98):
     """
     Additionne deux paramètres de `type_int`

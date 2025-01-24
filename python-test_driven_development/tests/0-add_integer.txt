@@ -35,3 +35,18 @@ Traceback (most recent call last):
   File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-test_driven_development/0-add_integer.py", line 33, in add_integer
     raise TypeError("a must be an integer")
 TypeError: a must be an integer
+>>> add_integer(1, 2, 3)
+Traceback (most recent call last):
+  File "<python-input-2>", line 1, in <module>
+    add_integer(1, 2, 3)
+    ~~~~~~~~~~~^^^^^^^^^
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+>>> add_integer(12e308, 12e308)
+Traceback (most recent call last):
+  File "<python-input-3>", line 1, in <module>
+    add_integer(12e308, 12e308)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-test_driven_development/0-add_integer.py", line 39, in add_integer
+    return int(a) + int(b)
+           ~~~^^^
+OverflowError: cannot convert float infinity to integer
