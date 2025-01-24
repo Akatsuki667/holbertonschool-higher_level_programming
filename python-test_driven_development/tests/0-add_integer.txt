@@ -1,0 +1,37 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(5, 2)
+7
+>>> add_integer(5, 2.5)
+7
+>>> add_integer(5)
+103
+>>> add_integer()
+Traceback (most recent call last):
+  File "<python-input-4>", line 1, in <module>
+    add_integer()
+    ~~~~~~~~~~~^^
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>> add_integer("hello", 2)
+Traceback (most recent call last):
+  File "<python-input-5>", line 1, in <module>
+    add_integer("hello", 2)
+    ~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-test_driven_development/0-add_integer.py", line 33, in add_integer
+    raise TypeError("a must be an integer")
+TypeError: a must be an integer
+>>> add_integer(5, "world" )
+Traceback (most recent call last):
+  File "<python-input-6>", line 1, in <module>
+    add_integer(5, "world" )
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-test_driven_development/0-add_integer.py", line 36, in add_integer
+    raise TypeError("b must be an integer")
+TypeError: b must be an integer
+>>> add_integer("5", 2)
+Traceback (most recent call last):
+  File "<python-input-7>", line 1, in <module>
+    add_integer("5", 2)
+    ~~~~~~~~~~~^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-test_driven_development/0-add_integer.py", line 33, in add_integer
+    raise TypeError("a must be an integer")
+TypeError: a must be an integer
