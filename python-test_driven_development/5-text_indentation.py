@@ -5,14 +5,14 @@ Ceci est `5-text_indentation` module
 Ce module contient la fonction `text_indentation(text)`
 
 Cette fonction affiche un texte avec 2 lignes
-avec ces caractères `. ? :` 
+avec ces caractères `. ? :`
 """
 
 
 def text_indentation(text):
     """
     Cette fonction affiche un texte avec 2 lignes
-    avec ces caractères `. ? :` 
+    avec ces caractères `. ? :`
 
     Paramètre:
     text(str): Texte à formater et afficher
