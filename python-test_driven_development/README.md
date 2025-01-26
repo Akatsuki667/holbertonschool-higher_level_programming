@@ -247,7 +247,7 @@ def print_square(size):
     ####
     """
 
-    if type(size) != int:
+    if type(size) is not int:
         raise TypeError("size must be an integer")
 
     if size < 0:
@@ -281,8 +281,15 @@ def print_square(size):
 size must be >= 0
 ```
 
-##
+## 4. Text indentation
+Write a function that prints a text with 2 new lines after each of these characters: `.`, `?` and `:`
+
 ### Objectives
+- Prototype: `def text_indentation(text):`
+- `text` must be a string, otherwise raise a `TypeError` exception with the message `text must be a string`
+- There should be no space at the beginning or at the end of each printed line
+- You are not allowed to import any module
+
 ### Expectation
 ```Python
 ```
