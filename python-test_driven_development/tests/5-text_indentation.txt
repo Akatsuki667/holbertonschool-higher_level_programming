@@ -1,0 +1,28 @@
+>>> from importlib import import_module
+>>> text_indentation = import_module('5-text_indentation').text_indentation
+>>> text_indentation("Holberton School")
+Holberton School
+>>> text_indentation("Holberton.School")
+Holberton.
+<BLANKLINE>
+School
+>>> text_indentation("Holberton. School? How are you: John")
+Holberton.
+<BLANKLINE>
+School?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+John
+>>> text_indentation("")
+<BLANKLINE>
+>>> text_indentation(12)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+>>> text_indentation("This. Is a test: Without extra spaces.")
+This.
+<BLANKLINE>
+Is a test:
+<BLANKLINE>
+Without extra spaces.

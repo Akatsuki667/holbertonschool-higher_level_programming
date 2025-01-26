@@ -292,9 +292,84 @@ Write a function that prints a text with 2 new lines after each of these charact
 
 ### Expectation
 ```Python
+#!/usr/bin/python3
+"""
+Ceci est `5-text_indentation` module
+
+Ce module contient la fonction `text_indentation(text)`
+
+Cette fonction affiche un texte avec 2 lignes
+avec ces caractères `. ? :` 
+"""
+
+
+def text_indentation(text):
+    """
+    Cette fonction affiche un texte avec 2 lignes
+    avec ces caractères `. ? :` 
+
+    Paramètre:
+    text(str): Texte à formater et afficher
+
+    Raises:
+    TypeError: Si le texte n'est pas de type str
+
+    Exemples:
+    >>> text_indentation("Hello. How are you? Fine:")
+    Hello.
+
+    How are you?
+
+    Fine:
+    """
+
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
+
+    result = ""
+
+    skip_space = False
+
+    for char in text:
+        if char in ".:?":
+            result += char + "\n\n"
+            skip_space = True
+        elif char == " " and skip_space:
+            continue
+        else:
+            result += char
+            skip_space = False
+    print(result.strip(), end="")
 ```
 ### Result
 ```bash
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Quonam modo?
+
+Utrum igitur tibi litteram videor an totas paginas commovere?
+
+Non autem hoc:
+
+igitur ne illud quidem.
+
+Fortasse id optimum, sed ubi illud:
+
+Plus semper voluptatis?
+
+Teneo, inquit, finem illi videri nihil dolere.
+
+Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+
+Si id dicis, vicimus.
+
+Inde sermone vario sex illa a Dipylo stadia confecimus.
+
+Sin aliud quid voles, postea.
+
+Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+
+Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres%                                                              
 ```
 
 ##
