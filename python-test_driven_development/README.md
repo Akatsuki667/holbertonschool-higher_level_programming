@@ -147,13 +147,59 @@ def matrix_divided(matrix, div):
 [[1, 2, 3], [4, 5, 6]]
 ```
 
-##
+## 2. Say my name
+Write a function that prints `My name is <first name> <last name>`
+
 ### Objectives
+- Prototype: `def say_my_name(first_name, last_name=""):`
+- first_name and last_name must be strings otherwise, raise a `TypeError` exception with the message `first_name must be a string` or `last_name must be a string`
+- You are not allowed to import any module
 ### Expectation
 ```Python
+#!/usr/bin/python3
+"""
+Ceci est `3-say_my_name` module
+
+Ce module contient une fonction `say_my_name(first_name, last_name="")`
+
+Cette fonction affiche "My name is <first name> <last name>"
+"""
+
+
+def say_my_name(first_name, last_name=""):
+    """
+    affiche "My name is <first name> <last name>"
+
+    Paramètres:
+    first_name(str): Nom
+    last_name(str): Prénom
+
+    Raises:
+    TypeError: Si first_name ou last_name ne sont pas de type str
+
+    Exemples:
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+    >>> say_my_name("Bob")
+    My name is Bob
+    >>> say_my_name(12, "White")
+    TypeError: first_name must be a string
+    """
+
+    if type(first_name) not in [str]:
+        raise TypeError("first_name must be a string")
+
+    if type(last_name) not in [str]:
+        raise TypeError("last_name must be a string")
+
+    print("My name is {} {}".format(first_name, last_name))
 ```
 ### Result
 ```bash
+My name is John Smith
+My name is Walter White
+My name is Bob 
+first_name must be a string
 ```
 
 ##
