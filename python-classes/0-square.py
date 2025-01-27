@@ -1,16 +1,16 @@
 #!/usr/bin/python3
 """
-Ceci est "0-square" module
+Module 0-square
 
-Ce module contient `class Square`
-
-Cette classe ne fais rien
+Ce module définit une classe Square qui, pour l'instant, ne fait rien.
 """
 
 
 class Square:
     """
-    Square ne fais rien
+    Représente un carré.
+
+    Cette classe est vide, sert de base pour fonctionnalités futures.
     """
 
     pass
