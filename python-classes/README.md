@@ -79,13 +79,63 @@ class Square:
 'Square' object has no attribute '__size'
 ```
 
-##
+## 2. Size validation
+Write a class `Square` that defines a square by: (based on `1-square.py`)
+
 ### Objectives
+- Private instance attribute: `size`
+- Instantiation with optional `size`: `def __init__(self, size=0):`
+	- `size` must be an integer, otherwise raise a `TypeError` exception with the message `size must be an integer`
+	- if `size` is less than `0`, raise a `ValueError` exception with the message `size must be >= 0`
+- You are not allowed to import any module
 ### Expectation
 ```python3
+#!/usr/bin/python3
+"""
+Module `2-square.py`
+
+Ce module définit une classe `Square` qui représente un carré
+"""
+
+
+class Square:
+    """
+    Classe qui représente un carré
+
+    Attribut privé:
+    __size: La taille du carré (initialisé lors de l'instanciation)
+    """
+
+    def __init__(self, size=0):
+        """
+        Constructeur pour initialiser un carré avec une taille donnée
+
+        Args:
+        size(int): La taille du carré
+
+        Raises:
+        TypeError: Si le type de size n'est pas un entier
+        ValueError: Si la valeur de size est inférieur à zéro
+        """
+
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+
+        if size < 0:
+            raise ValueError("size must be >= 0")
+
+        self.__size = size
 ```
 ### Result
 ```bash
+<class '2-square.Square'>
+{'_Square__size': 3}
+<class '2-square.Square'>
+{'_Square__size': 0}
+'Square' object has no attribute 'size'
+'Square' object has no attribute '__size'
+size must be an integer
+size must be >= 0
 ```
 
 ##
