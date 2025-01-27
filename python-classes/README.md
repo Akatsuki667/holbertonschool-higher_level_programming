@@ -138,16 +138,73 @@ size must be an integer
 size must be >= 0
 ```
 
-##
+## 3. Area of a square
+Write a class `Square` that defines a square by: (based on `2-square.py`)
+
 ### Objectives
+- Private instance attribute: `size`
+- Instantiation with optional `size`: `def __init__(self, size=0):`
+	- `size` must be an integer, otherwise raise a `TypeError` exception with the message `size must be an integer`
+	- if `size` is less than `0`, raise a `ValueError` exception with the message size must be >= 0
+- Public instance method: `def area(self):` that returns the current square area
+- You are not allowed to import any module
+
 ### Expectation
 ```python3
+#!/usr/bin/python3
+"""
+Module `3-square`
+
+Ce module définit une classe `Square` qui représente un carré
+"""
+
+
+class Square:
+    """
+    Classe qui représente un carré
+
+    Attribut privé:
+    __size: La taille du carré (initialisé lors de l'instanciation)
+    """
+
+    def __init__(self, size=0):
+        """
+        Constructeur pour initialiser un carré avec une taille donnée
+
+        Args:
+        size(int): La taille du carré
+
+        Raises:
+        TypeError: Si le type de size n'est pas un entier
+        ValueError: Si la valeur de size est inférieur à zéro
+        """
+
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+
+        if size < 0:
+            raise ValueError("size must be >= 0")
+
+        self.__size = size
+
+    def area(self):
+        """
+        Calcule et retourne l'aire du carré
+
+        Returns:
+        int: L'aire du carré
+        """
+        return self.__size * self.__size
 ```
 ### Result
 ```bash
+Area: 9
+'Square' object has no attribute 'size'
+'Square' object has no attribute '__size'
+Area: 25
 ```
 
-##
+## 4. Access and update private attribute
 ### Objectives
 ### Expectation
 ```python3
