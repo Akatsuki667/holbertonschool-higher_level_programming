@@ -36,7 +36,7 @@ class Square:
 
     def area(self):
         """
-        Calcule et retourne l'aire du carré
+        Calcule l'aire du carré
 
         Returns:
         int: L'aire du carré
