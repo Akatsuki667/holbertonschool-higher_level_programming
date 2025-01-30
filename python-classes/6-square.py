@@ -28,6 +28,12 @@ class Square:
         TypeError: Si position est un tuple de 2 entiers positifs
         """
 
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+
+        if size < 0:
+            raise ValueError("size must be >= 0")
+
         self.__size = size
 
         if not all(isinstance(x, int) and x >= 0 for x in position):
