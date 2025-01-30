@@ -1,32 +1,56 @@
 #!/usr/bin/python3
 """
-Ce module définit une classe square (ou carré)
+Module `4-square`
+
+Ce module définit une classe `Square` qui représente un carré
 """
 
 
 class Square:
     """
-    Cette classe représente un carré
+    Classe qui représente un carré
+
+    Attribut privé:
+    __size: La taille du carré (initialisé lors de l'instanciation)
     """
 
     def __init__(self, size=0, position=(0, 0)):
+        """
+        Constructeur pour initialiser un carré avec une taille donnée
+
+        Args:
+        size(int): La taille du carré
+
+        Raises:
+        TypeError: Si le type de size n'est pas un entier
+        ValueError: Si la valeur de size est inférieur à zéro
+        """
         self.size = size
         self.position = position
 
     @property
     def size(self):
         """
-        Getter pour l'attribut __size.
-        Retourne la valeur de __size.
+        Getter pour l'attribut size
+
+        Returns:
+        int: La taille du carré
         """
         return self.__size
 
     @property
     def position(self):
         """
-        Getter pour l'attribut __position.
-        Retourne la valeur de __position.
+        Setter pour l'attribut size
+
+        Args:
+        value(int): Nouvelle taille du carré
+
+        Raises:
+        TypeError: Si value n'est pas un entier
+        ValueError: Si value est inférieure à zéro
         """
+
         return self.__position
 
     @size.setter
@@ -57,13 +81,28 @@ class Square:
 
     def area(self):
         """
-        Returns the area of the square.
+        Calcule et retourne l'aire du carré
+
+        Returns:
+        int: L'aire du carré
         """
         return self.__size ** 2
 
     def my_print(self):
         """
-        Print a square of size self.__size.
+        Affiche le carré représenté par le caractère `#`.
+
+        Si la taille du carré est 0, la méthode affiche une ligne vide.
+        Sinon, elle affiche un carré de `#`, dont le nb de lignes et colonnes
+        correspond à la valeur de `__size`.
+
+        Exemple:
+        Si `__size = 3`, la sortie sera:
+        ###
+        ###
+        ###
+
+        Si `__size = 0`, la sortie sera une ligne vide.
         """
         if self.__size == 0:
             print()
