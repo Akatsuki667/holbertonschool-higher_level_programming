@@ -138,4 +138,4 @@ class Rectangle:
         """
         Affiche "By rectangle..."
         """
-        print("By rectangle...")
+        print("Bye rectangle...")
