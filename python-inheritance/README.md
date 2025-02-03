@@ -169,13 +169,30 @@ class BaseGeometry:
 ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__']
 ```
 
-##
+## 6. Improve Geometry
+Write a class `BaseGeometry` (based on `5-base_geometry.py`).
+
 ### Objectives
+- Public instance method: `def area(self):` that raises an `Exception` with the message `area() is not implemented`
+- You are not allowed to import any module
+
 ### Expectation
 ```python3
+    def area(self):
+        """
+        Calcule l'aire de la figure géométrique.
+
+        Cette méthode doit être surchargée dans les sous-classes.
+        Lève une exception si elle est appelée depuis `BaseGeometry`.
+
+        Raises:
+        Exception: "area() is not implemented"
+        """
+        raise Exception("area() is not implemented")
 ```
 ### Result
 ```bash
+[Exception] area() is not implemented
 ```
 
 ##
