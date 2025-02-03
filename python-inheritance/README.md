@@ -57,22 +57,48 @@ class MyList(list):
 [1, 4, 2, 3, 5]
 ```
 
-##
+## 2. Exact same object
+Write a function that returns `True` if the object is exactly an instance of the specified class ; otherwise `False`.
+
 ### Objectives
+- Prototype: `def is_same_class(obj, a_class):`
+- You are not allowed to import any module
+
 ### Expectation
 ```python3
+#!/usr/bin/python3
+def is_same_class(obj, a_class):
+    """
+    Vérifie si un objet est exactement une instance d'une classe donnée.
+
+    Args:
+    obj (any): L'objet à vérifier.
+    a_class (type): La classe de référence.
+
+    Returns:
+    bool: True si `obj` est exactement une instance de `a_class`, sinon False.
+    """
+    return type(obj) is a_class
 ```
 ### Result
 ```bash
+1 is an instance of the class int
 ```
 
-##
+## 3. Same class or inherit from
+Write a function that returns `True` if the object is an instance of, or if the object is an instance of a class that inherited from, the specified class ; otherwise `False`.
+
 ### Objectives
+- Prototype: `def is_kind_of_class(obj, a_class):`
+- You are not allowed to import any module
+
 ### Expectation
 ```python3
 ```
 ### Result
 ```bash
+1 comes from int
+1 comes from object
 ```
 
 ##
