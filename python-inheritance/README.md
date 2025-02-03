@@ -195,13 +195,44 @@ Write a class `BaseGeometry` (based on `5-base_geometry.py`).
 [Exception] area() is not implemented
 ```
 
-##
+## 7. Integer validator
+Write a class `BaseGeometry` (based on `6-base_geometry.py`).
+
 ### Objectives
+- Public instance method: `def area(self):` that raises an `Exception` with the message `area() is not implemented`
+- Public instance method: `def integer_validator(self, name, value):` that validates `value`:
+    - you can assume `name` is always a string
+    - if `value` is not an integer: raise a `TypeError` exception, with the message `<name> must be an integer`
+    - if `value` is less or equal to 0: raise a `ValueError` exception with the message `<name> must be greater than 0`
+- You are not allowed to import any module
+
 ### Expectation
 ```python3
+    def integer_validator(self, name, value):
+        """
+        Valide qu'une valeur est un entier positif.
+
+        Vérifie si `value` est un entier et s'il est strictement positif.
+        Elle lève une exception si ces conditions ne sont pas respectées.
+
+        Args:
+        name(str): Le nom de la variable (utilisé dans le message d'erreur).
+        value(int): La valeur à valider.
+
+        Raises:
+        TypeError: Si `value` n'est pas un entier.
+        ValueError: Si `value` est inférieur ou égal à 0.
+        """
+        if type(value) is not int:
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be greater than 0")
 ```
 ### Result
 ```bash
+[TypeError] name must be an integer
+[ValueError] age must be greater than 0
+[ValueError] distance must be greater than 0
 ```
 
 ##
