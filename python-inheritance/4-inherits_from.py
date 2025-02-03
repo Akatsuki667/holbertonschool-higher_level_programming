@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+"""
+Module `4-inherits_from`
+
+Contient la fonction `inherits_from`
+"""
+
+
 def inherits_from(obj, a_class):
     """
     Vérifie si un objet est une instance d'une sous-classe de `a_class`

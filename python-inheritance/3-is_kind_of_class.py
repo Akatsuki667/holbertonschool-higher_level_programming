@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+"""
+Module `3-is_kind_of_class`
+
+Contient la fonction `is_kind_of_class`
+"""
+
+
 def is_kind_of_class(obj, a_class):
     """
     Vérifie si un objet est instance d'une classe ou classe parente.
