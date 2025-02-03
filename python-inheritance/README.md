@@ -94,6 +94,19 @@ Write a function that returns `True` if the object is an instance of, or if the 
 
 ### Expectation
 ```python3
+#!/usr/bin/python3
+def is_kind_of_class(obj, a_class):
+    """
+    Vérifie si un objet est instance d'une classe ou classe parente.
+
+    Args:
+    obj (any): L'objet à vérifier.
+    a_class (type): La classe de référence.
+
+    Returns:
+    bool: True`obj` instance de `a_class`/ classe parente`a_class`,sinon False.
+    """
+    return isinstance(obj, a_class)
 ```
 ### Result
 ```bash
@@ -101,13 +114,35 @@ Write a function that returns `True` if the object is an instance of, or if the 
 1 comes from object
 ```
 
-##
+## 4. Only sub class of
+Write a function that returns `True` if the object is an instance of a class that inherited (directly or indirectly) from the specified class ; otherwise `False`.
+
 ### Objectives
+- Prototype: `def inherits_from(obj, a_class):`
+- You are not allowed to import any module
+
 ### Expectation
 ```python3
+#!/usr/bin/python3
+def inherits_from(obj, a_class):
+    """
+    Vérifie si un objet est une instance d'une sous-classe de `a_class`
+    (sans être une instance directe de `a_class`).
+
+    Args:
+    obj (any): L'objet à vérifier.
+    a_class (type): La classe de référence.
+
+    Returns:
+    bool: True si `obj` est une instance d'une sous-classe de `a_class`,
+        mais pas une instance directe de `a_class`. Sinon, False.
+    """
+    return not issubclass(a_class, type(obj))
 ```
 ### Result
 ```bash
+True inherited from class int
+True inherited from class object
 ```
 
 ##
