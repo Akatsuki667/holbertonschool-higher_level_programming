@@ -16,7 +16,7 @@ def inherits_from(obj, a_class):
     a_class (type): La classe de référence.
 
     Returns:
-    bool: True si `obj` est une instance d'une sous-classe de `a_class`,
-        mais pas une instance directe de `a_class`. Sinon, False.
+    bool: True si `obj` est une instance de `a_class` ou sous-classe `a_class`
+    ET vérifie que type(obj) provient d'une sous-classe `a_class`
     """
-    return not issubclass(a_class, type(obj))
+    return isinstance(obj, a_class) and type(obj) is not a_class
