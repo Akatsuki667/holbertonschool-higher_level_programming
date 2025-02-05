@@ -22,8 +22,8 @@ class Square(Rectangle):
         size (int): La taille du côté du carré, doit être un entier positif.
 
         Raises:
-            TypeError: Si size n'est pas un entier.
-            ValueError: Si size n'est pas positif.
+        TypeError: Si size n'est pas un entier.
+        ValueError: Si size n'est pas positif.
         """
         self.integer_validator("size", size)
         super().__init__(size, size)
@@ -34,6 +34,6 @@ class Square(Rectangle):
         Calcule et retourne l'aire du carré.
 
         Returns:
-            int: L'aire du carré (size × size).
+        int: L'aire du carré (size × size).
         """
         return self.__size * self.__size

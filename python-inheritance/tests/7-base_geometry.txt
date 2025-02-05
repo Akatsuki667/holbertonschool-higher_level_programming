@@ -19,3 +19,11 @@
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 ...     
 [ValueError] distance must be greater than 0
+>>> bg.integer_validator("my_int", 12.5)
+Traceback (most recent call last):
+  File "<python-input-6>", line 1, in <module>
+    bg.integer_validator("my_int", 12.5)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 48, in integer_validator
+    raise TypeError(f"{name} must be an integer")
+TypeError: my_int must be an integer
