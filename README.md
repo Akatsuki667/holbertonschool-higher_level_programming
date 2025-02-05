@@ -490,3 +490,29 @@
 ### 9. Full rectangle
 ### 10. Square #1
 ### 11. Square #2
+
+
+# Python - Abstract Classes and Interfaces
+
+## Learning Objectives
+
+1. `Abstract Classes`: Understand and apply abstract classes to define common interfaces while enforcing certain levels of class completeness.
+
+2. `Interfaces and Duck Typing`: Grasp the concept of interfaces and duck typing to ensure that objects adhere to a specific contract or protocol.
+
+3. `Subclassing Standard Base Classes`: Learn to extend standard base classes like lists, dictionaries, and iterators to create custom data structures with specialized behavior.
+
+4. `Method Overriding`: Employ method overriding to alter or enhance the behavior of base class methods.
+
+5. `Multiple Inheritance`: Understand and apply multiple inheritance to form complex relationships between classes.
+
+6. `Mixins`: Utilize mixins to compose behavior across unrelated classes.
+
+## TASKS
+
+### 0. Abstract Animal Class and its Subclasses
+### 1. Shapes, Interfaces, and Duck Typing
+### 2. Extending the Python List with Notifications
+### 3. CountedIterator - Keeping Track of Iteration
+### 4. The Enigmatic FlyingFish - Exploring Multiple Inheritance
+### 5. The Mystical Dragon - Mastering Mixins
