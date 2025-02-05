@@ -2,7 +2,6 @@
 
 ## 0. Abstract Animal Class and its Subclasses
 1. Create an abstract class named `Animal` using the `ABC` package. This class should have an abstract method called `sound`.
-
 2. Create two subclasses of `Animal`: `Dog` and `Cat`. Implement the `sound` method in each subclass to return the strings “Bark” and “Meow” respectively.
 
 ### Instructions
@@ -51,8 +50,30 @@ Traceback (most recent call last):
 TypeError: Can't instantiate abstract class Animal without an implementation for abstract method 'sound'
 ```
 
-##
+## 1. Shapes, Interfaces, and Duck Typing
+1. Create an abstract class named `Shape` with two abstract methods: `area` and `perimeter`.
+2. Implement two concrete classes: `Circle` and `Rectangle`, both inheriting from Shape. Each class should provide implementations for the `area` and `perimeter` methods.
+3. Write a standalone function named `shape_info` that accepts an object of type `Shape` (by duck typing) and prints its area and perimeter.
+4. Test the `shape_info` function with instances of both `Circle` and `Rectangle`.
+
 ### Instructions
+__Shape Abstract Class__:
+- Define an abstract class `Shape` using the `ABC` package.
+- Within Shape, declare two abstract methods: `area` and `perimeter`.
+
+__Circle and Rectangle Classes__:
+- Create a `Circle` class that inherits from `Shape`. The constructor (__init__) should accept a radius. Implement the `area` and `perimeter` methods.
+- Create a `Rectangle` class, also inheriting from `Shape`. Its constructor should accept the width and height. Implement the `area` and `perimeter` methods.
+
+__shape_info Function__:
+- Define a function named `shape_info` that takes a single argument.
+- Without explicitly checking the type of the argument, call its `area` and `perimeter` methods (relying on duck typing).
+- Print the area and perimeter of the shape passed to the function.
+
+__Testing__:
+Instantiate a `Circle` and a `Rectangle`.
+Pass each object to the `shape_info` function and observe the output.
+
 ### Expectation
 ```python3
 ```
