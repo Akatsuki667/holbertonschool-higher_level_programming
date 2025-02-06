@@ -5,15 +5,31 @@
 Traceback (most recent call last):
   ...
 ValueError: width must be greater than 0
->>> bg.integer_validator("width", )
-Traceback (most recent call last):
-  ...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 >>> bg.integer_validator("width", 0)
 Traceback (most recent call last):
   ...
 ValueError: width must be greater than 0
+>>> bg.integer_validator("width", 89.5)
+Traceback (most recent call last):
+  ...
+TypeError: width must be an integer
+>>> bg.integer_validator("width", )
+Traceback (most recent call last):
+  ...
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+>>> bg.integer_validator("width", None)
+Traceback (most recent call last):
+  ...
+TypeError: width must be an integer
+>>> bg.integer_validator("width", True)
+Traceback (most recent call last):
+  ...
+TypeError: width must be an integer
 >>> bg.integer_validator("width", "hello")
+Traceback (most recent call last):
+  ...
+TypeError: width must be an integer
+>>> bg.integer_validator("width", (1, 2))
 Traceback (most recent call last):
   ...
 TypeError: width must be an integer
@@ -25,8 +41,3 @@ TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 w
 Traceback (most recent call last):
   ...
 TypeError: width must be an integer
->>> bg.integer_validator("width", 89.5)
-Traceback (most recent call last):
-  ...
-TypeError: width must be an integer
-
