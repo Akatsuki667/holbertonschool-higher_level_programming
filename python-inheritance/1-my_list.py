@@ -8,7 +8,7 @@ Ce module définit une classe `MyList`
 
 class MyList(list):
     """
-    `MyList` classe
+    `MyList` classe dérivé de liste
     """
 
     def print_sorted(self):
