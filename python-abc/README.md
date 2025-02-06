@@ -79,6 +79,10 @@ Pass each object to the `shape_info` function and observe the output.
 ```
 ### Result
 ```bash
+Area: 78.53981633974483
+Perimeter: 31.41592653589793
+Area: 28
+Perimeter: 22
 ```
 
 ##
