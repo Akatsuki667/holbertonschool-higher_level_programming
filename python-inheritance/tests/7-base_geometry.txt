@@ -1,30 +1,103 @@
->>> from importlib import import_module
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
->>> bg.integer_validator("my_int", 12)
->>> try:
-...     bg.integer_validator("name", "John")
-... except Exception as e:
-...      print("[{}] {}".format(e.__class__.__name__, e))
-...      
-[TypeError] name must be an integer
->>> try:
-...     bg.integer_validator("age", 0)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-...     
-[ValueError] age must be greater than 0
->>> try:
-...     bg.integer_validator("distance", -4)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-...     
-[ValueError] distance must be greater than 0
->>> bg.integer_validator("my_int", 12.5)
+>>> bg.integer_validator("width", 89)
+>>> bg.integer_validator("width", -89)
+Traceback (most recent call last):
+  File "<python-input-3>", line 1, in <module>
+    bg.integer_validator("width", -89)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 51, in integer_validator
+    raise ValueError(f"{name} must be greater than 0")
+ValueError: width must be greater than 0
+>>> bg.integer_validator("width", )
+Traceback (most recent call last):
+  File "<python-input-4>", line 1, in <module>
+    bg.integer_validator("width", )
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+>>> bg.integer_validator("width", 0)
+Traceback (most recent call last):
+  File "<python-input-5>", line 1, in <module>
+    bg.integer_validator("width", 0)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 51, in integer_validator
+    raise ValueError(f"{name} must be greater than 0")
+ValueError: width must be greater than 0
+>>> bg.integer_validator("width", "hello")
 Traceback (most recent call last):
   File "<python-input-6>", line 1, in <module>
-    bg.integer_validator("my_int", 12.5)
+    bg.integer_validator("width", "hello")
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 48, in integer_validator
+    raise TypeError(f"{name} must be an integer")
+TypeError: width must be an integer
+>>> bg.integer_validator("width", 1, 3)
+Traceback (most recent call last):
+  File "<python-input-7>", line 1, in <module>
+    bg.integer_validator("width", 1, 3)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+>>> bg.integer_validator("width", [1, 2])
+Traceback (most recent call last):
+  File "<python-input-8>", line 1, in <module>
+    bg.integer_validator("width", [1, 2])
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 48, in integer_validator
+    raise TypeError(f"{name} must be an integer")
+TypeError: width must be an integer
+>>> bg.integer_validator("width", 89.5)
+Traceback (most recent call last):
+  File "<python-input-9>", line 1, in <module>
+    bg.integer_validator("width", 89.5)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 48, in integer_validator
+    raise TypeError(f"{name} must be an integer")
+TypeError: width must be an integer
+>>> bg.integer_validator("width", 1e35)
+Traceback (most recent call last):
+  File "<python-input-10>", line 1, in <module>
+    bg.integer_validator("width", 1e35)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 48, in integer_validator
+    raise TypeError(f"{name} must be an integer")
+TypeError: width must be an integer
+>>> bg.integer_validator("width", float('nan'))
+Traceback (most recent call last):
+  File "<python-input-11>", line 1, in <module>
+    bg.integer_validator("width", float('nan'))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 48, in integer_validator
+    raise TypeError(f"{name} must be an integer")
+TypeError: width must be an integer
+>>> bg.integer_validator("width", {1, 2})
+Traceback (most recent call last):
+  File "<python-input-12>", line 1, in <module>
+    bg.integer_validator("width", {1, 2})
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 48, in integer_validator
+    raise TypeError(f"{name} must be an integer")
+TypeError: width must be an integer
+>>> bg.integer_validator("width", {"key": 1})
+Traceback (most recent call last):
+  File "<python-input-13>", line 1, in <module>
+    bg.integer_validator("width", {"key": 1})
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 48, in integer_validator
+    raise TypeError(f"{name} must be an integer")
+TypeError: width must be an integer
+>>> bg.integer_validator("width", 1e35)
+Traceback (most recent call last):
+  File "<python-input-14>", line 1, in <module>
+    bg.integer_validator("width", 1e35)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 48, in integer_validator
+    raise TypeError(f"{name} must be an integer")
+TypeError: width must be an integer
+>>> bg.integer_validator("width", -1e35)
+Traceback (most recent call last):
+  File "<python-input-15>", line 1, in <module>
+    bg.integer_validator("width", -1e35)
     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
   File "/Users/altyt/Akatsuki667/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 48, in integer_validator
     raise TypeError(f"{name} must be an integer")
-TypeError: my_int must be an integer
+TypeError: width must be an integer
