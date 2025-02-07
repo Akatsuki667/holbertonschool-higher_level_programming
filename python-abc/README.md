@@ -130,13 +130,53 @@ Area: 28
 Perimeter: 22
 ```
 
-##
+## 2. Extending the Python List with Notifications
+Create a class named `VerboseList` that extends the Python `list` class. This custom class should print a notification message every time an item is added (using the `append` or `extend` methods) or removed (using the `remove` or `pop` methods).
+
 ### Instructions
+__Setting up the VerboseList Class__:
+Define a class `VerboseList` that inherits from the built-in `list` class.
+Within `VerboseList`, override the methods that modify the list: `append`, `extend`, `remove`, and `pop`.
+
+__Implementing Notifications__:
+For the `append` method: After adding the item to the list, print a message like “Added [item] to the list.”
+For the `extend` method: After extending the list, print a message like “Extended the list with [x] items.” where [x] is the number of items added.
+For the `remove` method: Before removing the item from the list, print a message like “Removed [item] from the list.”
+For the `pop` method: Before popping the item from the list, print a message like “Popped [item] from the list.” If the index is not specified, default behavior is to pop the last item.
+
+__Testing__:
+Instantiate a `VerboseList` object.
+Test all the overridden methods (`append`, `extend`, `remove`, and `pop`) and ensure that the appropriate messages are printed for each operation.
+
 ### Expectation
 ```python3
+#!/usr/bin/python3
+
+
+class VerboseList(list):
+
+    def append(self, item):
+        print(f"Added {[item]} to the list.")
+
+    def extend(self, item):
+        super().extend(item)
+        print(f"Extended the list with {[item]} items.")
+
+    def remove(self, item):
+        print(f"Removed {[item]} from the list.")
+
+    def pop(self, index=-1):  # -1 par défaut pour suivre comportement list.pop
+        item = self[index]  # Récupération élément
+        print(f"Popped {[item]} from the list.")
+        return super().pop(index)  # Supprimer et retourner élément
 ```
 ### Result
 ```bash
+Added [4] to the list.
+Extended the list with [2] items.
+Removed [2] from the list.
+Popped [6] from the list.
+Popped [1] from the list.
 ```
 
 ##
