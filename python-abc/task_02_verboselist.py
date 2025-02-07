@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 class VerboseList(list):
 
     def append(self, item):
