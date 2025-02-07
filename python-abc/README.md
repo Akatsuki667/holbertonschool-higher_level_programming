@@ -135,18 +135,18 @@ Create a class named `VerboseList` that extends the Python `list` class. This cu
 
 ### Instructions
 __Setting up the VerboseList Class__:
-Define a class `VerboseList` that inherits from the built-in `list` class.
-Within `VerboseList`, override the methods that modify the list: `append`, `extend`, `remove`, and `pop`.
+- Define a class `VerboseList` that inherits from the built-in `list` class.
+- Within `VerboseList`, override the methods that modify the list: `append`, `extend`, `remove`, and `pop`.
 
 __Implementing Notifications__:
-For the `append` method: After adding the item to the list, print a message like “Added [item] to the list.”
-For the `extend` method: After extending the list, print a message like “Extended the list with [x] items.” where [x] is the number of items added.
-For the `remove` method: Before removing the item from the list, print a message like “Removed [item] from the list.”
-For the `pop` method: Before popping the item from the list, print a message like “Popped [item] from the list.” If the index is not specified, default behavior is to pop the last item.
+- For the `append` method: After adding the item to the list, print a message like “Added [item] to the list.”
+- For the `extend` method: After extending the list, print a message like “Extended the list with [x] items.” where [x] is the number of items added.
+- For the `remove` method: Before removing the item from the list, print a message like “Removed [item] from the list.”
+- For the `pop` method: Before popping the item from the list, print a message like “Popped [item] from the list.” If the index is not specified, default behavior is to pop the last item.
 
 __Testing__:
-Instantiate a `VerboseList` object.
-Test all the overridden methods (`append`, `extend`, `remove`, and `pop`) and ensure that the appropriate messages are printed for each operation.
+- Instantiate a `VerboseList` object.
+- Test all the overridden methods (`append`, `extend`, `remove`, and `pop`) and ensure that the appropriate messages are printed for each operation.
 
 ### Expectation
 ```python3
@@ -184,19 +184,19 @@ Create a class named `CountedIterator` hat extends the built-in iterator obtaine
 
 ### Instructions
 __Setting up the CountedIterator Class__:
-Define a class `CountedIterator`.
-In the constructor (__init__), initialize two attributes: the iterator object (using the `iter` function) and a counter to track the number of items iterated.
-Provide a method `get_count` to return the current value of the counter.
+- Define a class `CountedIterator`.
+- In the constructor (__init__), initialize two attributes: the iterator object (using the `iter` function) and a counter to track the number of items iterated.
+- Provide a method `get_count` to return the current value of the counter.
 
-Overriding the next Method:
-Within the `CountedIterator` class, override the __next__ method.
-In this method, increment the counter each time the __next__ method is called.
-Fetch the next item from the original iterator and return it. If there are no items left to iterate, the method should raise the `StopIteration` exception.
+__Overriding the next Method__:
+- Within the `CountedIterator` class, override the __next__ method.
+- In this method, increment the counter each time the __next__ method is called.
+- Fetch the next item from the original iterator and return it. If there are no items left to iterate, the method should raise the `StopIteration` exception.
 
-Testing:
-Instantiate a `CountedIterator` object using a list or another iterable.
-Iterate over items using a loop or manual calls to the __next__ method.
-Use the `get_count` method to retrieve and print the number of items that have been fetched.
+__Testing__:
+- Instantiate a `CountedIterator` object using a list or another iterable.
+- Iterate over items using a loop or manual calls to the __next__ method.
+- Use the `get_count` method to retrieve and print the number of items that have been fetched.
 
 ### Expectation
 ```python3
@@ -229,19 +229,19 @@ Construct a `FlyingFish` class that inherits from both a `Fish` class and a `Bir
 
 ### Instructions
 __Parent Classes Setup__:
-Create a `Fish` class with methods `swim` (which prints “The fish is swimming”) and `habitat` (which prints “The fish lives in water”).
-Create a `Bird` class with methods `fly` (which prints “The bird is flying”) and `habitat` (which prints “The bird lives in the sky”).
+- Create a `Fish` class with methods `swim` (which prints “The fish is swimming”) and `habitat` (which prints “The fish lives in water”).
+- Create a `Bird` class with methods `fly` (which prints “The bird is flying”) and `habitat` (which prints “The bird lives in the sky”).
 
 __Implementing FlyingFish__:
-Construct a `FlyingFish` class that inherits from both `Fish` and `Bird`.
-Override the `fly` method to print “The flying fish is soaring!”.
-Override the `swim` method to print “The flying fish is swimming!”.
-Override the `habitat` method to print “The flying fish lives both in water and the sky!”.
+- Construct a `FlyingFish` class that inherits from both `Fish` and `Bird`.
+- Override the `fly` method to print “The flying fish is soaring!”.
+- Override the `swim` method to print “The flying fish is swimming!”.
+- Override the `habitat` method to print “The flying fish lives both in water and the sky!”.
 
 __Testing and MRO Exploration__:
-Instantiate an object of the `FlyingFish` class.
-Call the `fly`, `swim`, and `habitat` methods and observe the outputs.
-Use the `mro()` method or the .__mro__ attribute on the `FlyingFish` class to investigate the method resolution order. For instance, `print(FlyingFish.mro())`.
+- Instantiate an object of the `FlyingFish` class.
+- Call the `fly`, `swim`, and `habitat` methods and observe the outputs.
+- Use the `mro()` method or the .__mro__ attribute on the `FlyingFish` class to investigate the method resolution order. For instance, `print(FlyingFish.mro())`.
 ### Expectation
 ```python3
 #!/usr/bin/python3
@@ -282,11 +282,43 @@ The flying fish is soaring!
 The flying fish lives both in water and the sky!
 ```
 
-##
+## 5. The Mystical Dragon - Mastering Mixins
+Design two mixin classes, `SwimMixin` and `FlyMixin`, each equipped with methods `swim` and `fly`respectively. Next, construct a class `Dragon` that inherits from both these mixins. Your aim is to show that a `Dragon` instance can both swim and fly.
+
 ### Instructions
+__Creating Mixins__:
+- Design a mixin called `SwimMixin` with a method `swim` that prints “The creature swims!”.
+- Design another mixin called FlyMixin with a method fly that prints “The creature flies!”.
+
+__Implementing Dragon__:
+- Construct a class named Dragon that inherits from both SwimMixin and FlyMixin.
+- Within the Dragon class, you can add additional methods or attributes if desired, such as roar, which could print “The dragon roars!”.
+
+__Testing the Dragon’s Abilities__:
+- Instantiate an object of the Dragon class named draco.
+- Demonstrate draco‘s abilities by calling the swim, fly, and (if implemented) roar methods.
+
 ### Expectation
 ```python3
+#!/usr/bin/python3
+
+class SwimMixin:
+    def swim(self):
+        print(f"The creature swims!")
+
+
+class FlyMixin:
+    def fly(self):
+        print(f"The creature flies!")
+
+
+class Dragon(SwimMixin, FlyMixin):
+    def roar(self):
+        print(f"The dragon roars!")
 ```
 ### Result
 ```bash
+The creature swims!
+The creature flies!
+The dragon roars!
 ```
