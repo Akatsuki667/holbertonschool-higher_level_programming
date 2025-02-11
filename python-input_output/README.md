@@ -135,6 +135,13 @@ You don’t need to manage file permission exceptions.
 
 ### Expectation
 ```python3
+#!/usr/bin/python3
+
+import json
+
+def save_to_json_file(my_obj, filename):
+    with open(filename, "w") as f:
+        json.dump(my_obj, f)
 ```
 ### Result
 ```bash
@@ -144,7 +151,6 @@ guillaume@ubuntu:~/$ cat my_list.json ; echo ""
 guillaume@ubuntu:~/$ cat my_dict.json ; echo ""
 {"name": "John", "places": ["San Francisco", "Tokyo"], "id": 12, "info": {"average": 3.14, "age": 36}, "is_active": true}
 guillaume@ubuntu:~/$ cat my_set.json ; echo ""
-
 ```
 
 ##
