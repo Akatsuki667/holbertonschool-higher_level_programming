@@ -74,22 +74,48 @@ def append_write(filename="", text=""):
 24
 ```
 
-##
+## 3. To JSON string
+Write a function that returns the JSON representation of an object (string):
+
 ### Objectives
+Prototype: `def to_json_string(my_obj):`
+You don’t need to manage exceptions if the object can’t be serialized.
+
 ### Expectation
 ```python3
+#!/usr/bin/python3
+
+import json
+
+def to_json_string(my_obj):
+    return json.dumps(my_obj)
 ```
 ### Result
 ```bash
+[1, 2, 3]
+<class 'str'>
+{"id": 12, "name": "John", "places": ["San Francisco", "Tokyo"], "is_active": true, "info": {"age": 36, "average": 3.14}}
+<class 'str'>
+[TypeError] Object of type set is not JSON serializable
 ```
 
-##
+## 4. From JSON string to Object
+Write a function that returns an object (Python data structure) represented by a JSON string:
+
 ### Objectives
+- Prototype: `def from_json_string(my_str):`
+- You don’t need to manage exceptions if the JSON string doesn’t represent an object.
+
 ### Expectation
 ```python3
 ```
 ### Result
 ```bash
+[1, 2, 3]
+<class 'list'>
+{'id': 12, 'is_active': True, 'name': 'John', 'info': {'age': 36, 'average': 3.14}, 'places': ['San Francisco', 'Tokyo']}
+<class 'dict'>
+[JSONDecodeError] Expecting property name enclosed in double quotes: line 2 column 25 (char 25)
 ```
 
 ##
