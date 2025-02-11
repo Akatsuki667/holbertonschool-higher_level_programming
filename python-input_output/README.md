@@ -108,6 +108,12 @@ Write a function that returns an object (Python data structure) represented by a
 
 ### Expectation
 ```python3
+#!/usr/bin/python3
+
+import json
+
+def from_json_string(my_str):
+    return json.loads(my_str)
 ```
 ### Result
 ```bash
@@ -118,13 +124,27 @@ Write a function that returns an object (Python data structure) represented by a
 [JSONDecodeError] Expecting property name enclosed in double quotes: line 2 column 25 (char 25)
 ```
 
-##
+## 5. Save Object to a file
+Write a function that writes an Object to a text file, using a JSON representation:
+
 ### Objectives
+- Prototype: `def save_to_json_file(my_obj, filename):`
+You must use the `with` statement
+You don’t need to manage exceptions if the object can’t be serialized.
+You don’t need to manage file permission exceptions.
+
 ### Expectation
 ```python3
 ```
 ### Result
 ```bash
+[TypeError] Object of type set is not JSON serializable
+guillaume@ubuntu:~/$ cat my_list.json ; echo ""
+[1, 2, 3]
+guillaume@ubuntu:~/$ cat my_dict.json ; echo ""
+{"name": "John", "places": ["San Francisco", "Tokyo"], "id": 12, "info": {"average": 3.14, "age": 36}, "is_active": true}
+guillaume@ubuntu:~/$ cat my_set.json ; echo ""
+
 ```
 
 ##
