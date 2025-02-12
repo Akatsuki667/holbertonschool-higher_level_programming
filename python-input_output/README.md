@@ -278,13 +278,33 @@ guillaume@ubuntu:~/$ ./8-main_2.py
 {'number': 4, '_MyClass__name': 'John', 'is_team_red': True, 'score': 1}
 ```
 
-##
+## 9. Student to JSON
+Write a class `Student` that defines a student by:
+
 ### Objectives
+- Public instance attributes:
+    - `first_name`
+    - `last_name`
+    - `age`
+- Instantiation with `first_name`, `last_name` and `age`: `def __init__(self, first_name, last_name, age):`
+- Public method `def to_json(self):` that retrieves a dictionary representation of a `Student` instance (same as `8-class_to_json.py`)
+- You are not allowed to import any module
+
 ### Expectation
 ```python3
 ```
 ### Result
 ```bash
+<class 'dict'>
+John
+<class 'str'>
+23
+<class 'int'>
+<class 'dict'>
+Bob
+<class 'str'>
+27
+<class 'int'>
 ```
 
 ##
