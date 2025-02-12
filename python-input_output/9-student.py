@@ -4,7 +4,6 @@
 This module defines a Student class with basic attributes and a method to
 convert instance to JSON-compatible dictionary format.
 """
-class_to_json = __import__('8-class_to_json').class_to_json
 
 
 class Student:
@@ -35,4 +34,4 @@ class Student:
         Returns:
         dict: Dictionary containing all instance attributes.
         """
-        return class_to_json(self)
+        return self.__dict__

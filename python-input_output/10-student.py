@@ -6,21 +6,36 @@ UTF-8 encoding.
 """
 
 
-def write_file(filename="", text=""):
-    """Write string to a text file (UTF-8) and return chars written.
-
-    Args:
-        filename (str, optional): Path to the file. Defaults to empty string.
-        text (str, optional): Content to write. Defaults to empty string.
-
-    Returns:
-        int: Number of characters written to the file.
-
-    Raises:
-        IOError: If file cannot be opened or written to.
-        TypeError: If filename or text are not strings.
+class Student:
     """
-    with open(filename, mode="w", encoding="utf-8") as f:
-        nb_of_char = f.write(text)
+    Class representing a student.
 
-    return (nb_of_char)
+    A simple student class with basic personal information that can be
+    converted to a JSON-compatible dictionary format.
+    """
+
+    def __init__(self, first_name, last_name, age):
+        """
+        Initialize a new Student instance.
+
+        Args:
+        first_name (str): First name of the student.
+        last_name (str): Last name of the student.
+        age (int): Age of the student.
+        """
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def to_json(self, attrs=None):
+        """
+        Convert Student instance to dictionary representation.
+
+        Returns:
+        dict: Dictionary containing all instance attributes.
+        """
+        if (isinstance(attrs, list) and
+                all(isinstance(attr, str) for attr in attrs)):
+            return {key: value for key, value in self.__dict__.items()
+                if key in attrs}
+        return self.__dict__
