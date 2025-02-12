@@ -87,6 +87,7 @@ You don’t need to manage exceptions if the object can’t be serialized.
 
 import json
 
+
 def to_json_string(my_obj):
     return json.dumps(my_obj)
 ```
@@ -111,6 +112,7 @@ Write a function that returns an object (Python data structure) represented by a
 #!/usr/bin/python3
 
 import json
+
 
 def from_json_string(my_str):
     return json.loads(my_str)
@@ -139,27 +141,58 @@ You don’t need to manage file permission exceptions.
 
 import json
 
+
 def save_to_json_file(my_obj, filename):
     with open(filename, "w") as f:
         json.dump(my_obj, f)
 ```
 ### Result
 ```bash
+guillaume@ubuntu:~/$ ./5-main.py
 [TypeError] Object of type set is not JSON serializable
 guillaume@ubuntu:~/$ cat my_list.json ; echo ""
 [1, 2, 3]
 guillaume@ubuntu:~/$ cat my_dict.json ; echo ""
 {"name": "John", "places": ["San Francisco", "Tokyo"], "id": 12, "info": {"average": 3.14, "age": 36}, "is_active": true}
 guillaume@ubuntu:~/$ cat my_set.json ; echo ""
+
 ```
 
-##
+## 6. Create object from a JSON file
+Write a function that creates an Object from a “JSON file”:
+
 ### Objectives
+- Prototype: `def load_from_json_file(filename):`
+- You must use the `with` statement
+- You don’t need to manage exceptions if the JSON string doesn’t represent an object.
+- You don’t need to manage file permissions / exceptions.
+
 ### Expectation
 ```python3
+#!/usr/bin/python3
+
+import json
+
+
+def load_from_json_file(filename):
+    with open(filename, "r") as f:
+        return json.load(f)
 ```
 ### Result
 ```bash
+guillaume@ubuntu:~/$ cat my_list.json ; echo ""
+[1, 2, 3]
+guillaume@ubuntu:~/$ cat my_dict.json ; echo ""
+{"name": "John", "places": ["San Francisco", "Tokyo"], "id": 12, "info": {"average": 3.14, "age": 36}, "is_active": true}
+guillaume@ubuntu:~/$ cat my_fake.json ; echo ""
+{"is_active": true, 12 }
+guillaume@ubuntu:~/$ ./6-main.py
+[1, 2, 3]
+<class 'list'>
+{'name': 'John', 'info': {'age': 36, 'average': 3.14}, 'id': 12, 'places': ['San Francisco', 'Tokyo'], 'is_active': True}
+<class 'dict'>
+[FileNotFoundError] [Errno 2] No such file or directory: 'my_set_doesnt_exist.json'
+[JSONDecodeError] Expecting property name enclosed in double quotes: line 1 column 21 (char 20)
 ```
 
 ##
