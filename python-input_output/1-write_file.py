@@ -1,21 +1,26 @@
 #!/usr/bin/python3
+"""File I/O Module.
+
+This module provides functionality for writing text content to files using
+UTF-8 encoding.
+"""
+
+
 def write_file(filename="", text=""):
-    """
-    Écrit chaîne de caractères dans fichier texte, retourne le nb caractères
+    """Write string to a text file (UTF-8) and return chars written.
 
     Args:
-    filename(str): Le nom/chemin du fichier ds lql écrire. Défaut, chaîne vide.
-    text(str): Le texte à écrire ds fichier. Par défaut, chaîne vide.
+        filename (str, optional): Path to the file. Defaults to empty string.
+        text (str, optional): Content to write. Defaults to empty string.
 
     Returns:
-    int: Le nombre de caractères écrits dans le fichier.
+        int: Number of characters written to the file.
 
-    Note:
-    - Le fichier est ouvert en mode écriture ('w')
-    - L'encodage UTF-8 est utilisé
-    - Si le fichier existe déjà, son contenu est écrasé
-    - Le fichier est automatiquement fermé après l'écriture
+    Raises:
+        IOError: If file cannot be opened or written to.
+        TypeError: If filename or text are not strings.
     """
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write(text)
-        return len(text)
+    with open(filename, mode="w", encoding="utf-8") as f:
+        nb_of_char = f.write(text)
+
+    return (nb_of_char)

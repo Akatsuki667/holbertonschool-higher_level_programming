@@ -1,24 +1,28 @@
 #!/usr/bin/python3
+"""Student class module.
+
+This module defines a Student class with basic attributes and a method to
+convert instance to JSON-compatible dictionary format.
+"""
+class_to_json = __import__('8-class_to_json').class_to_json
 
 
 class Student:
     """
-    Classe représentant un étudiant.
+    Class representing a student.
 
-    Attributes:
-    first_name (str): Le prénom de l'étudiant.
-    last_name (str): Le nom de famille de l'étudiant.
-    age (int): L'âge de l'étudiant.
+    A simple student class with basic personal information that can be
+    converted to a JSON-compatible dictionary format.
     """
 
     def __init__(self, first_name, last_name, age):
         """
-        Initialise nouvel étudiant avec un prénom, un nom de famille et un âge.
+        Initialize a new Student instance.
 
         Args:
-        first_name (str): Le prénom de l'étudiant.
-        last_name (str): Le nom de famille de l'étudiant.
-        age (int): L'âge de l'étudiant.
+        first_name (str): First name of the student.
+        last_name (str): Last name of the student.
+        age (int): Age of the student.
         """
         self.first_name = first_name
         self.last_name = last_name
@@ -26,18 +30,9 @@ class Student:
 
     def to_json(self):
         """
-        Convertit les attributs de l'objet en un dictionnaire.
-
-        Cette méthode retourne un dictionnaire contenant tous les attributs
-        de l'objet et leurs valeurs associées. Cela peut être utile pour
-        sérialiser l'objet en JSON.
+        Convert Student instance to dictionary representation.
 
         Returns:
-        dict: Un dictionnaire représentant les attributs de l'objet.
-
-        Example:
-        >>> student = Student('John', 'Doe', 20)
-        >>> student.to_json()
-        {'first_name': 'John', 'last_name': 'Doe', 'age': 20}
+        dict: Dictionary containing all instance attributes.
         """
-        return self.__dict__
+        return class_to_json(self)

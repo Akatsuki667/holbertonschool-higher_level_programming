@@ -1,25 +1,26 @@
 #!/usr/bin/python3
+"""File I/O Module.
+
+This module provides functionality for appending text content to files using
+UTF-8 encoding.
+"""
+
 
 def append_write(filename="", text=""):
-    """
-    Ajoute du texte à la fin d'un fichier.
-
-    Cette fonction ouvre un fichier en mode ajout ('append') et écrit le texte
-    fourni à la fin du fichier. Si le fichier n'existe pas, il sera créé.
+    """Append string to a text file (UTF-8) and return chars written.
 
     Args:
-    filename (str): Le nom du fichier où le texte sera ajouté.
-    text (str): Le texte à ajouter au fichier.
+        filename (str, optional): Path to the file. Defaults to empty string.
+        text (str, optional): Content to append. Defaults to empty string.
 
     Returns:
-    int: Le nombre de caractères écrits dans le fichier.
+        int: Number of characters appended to the file.
 
-    Example:
-    >>> append_write('example.txt', 'Hello, World!')
-    13
-    >>> append_write('example.txt', 'Appending new text.')
-    19
+    Raises:
+        IOError: If file cannot be opened or written to.
+        TypeError: If filename or text are not strings.
     """
-    with open(filename, "a", encoding="utf-8") as f:
-        f.write("\n" + text)
-        return len(text)
+    with open(filename, mode="a", encoding="utf-8") as f:
+        nb_of_char = f.write(text)
+
+    return nb_of_char

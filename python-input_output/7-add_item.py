@@ -1,34 +1,40 @@
 #!/usr/bin/python3
+"""
+Module that adds all arguments to a list and saves them to a file.
 
-from sys import argv  # importation ARGV de SYS
+This module combines functionality from save_to_json_file and
+load_from_json_file to maintain a list of arguments in a JSON file.
+Each time the script is run, it loads existing arguments, adds new ones
+from command line, and saves the updated list back to the file.
+"""
+from sys import argv
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
 def add_item():
     """
-    Ajoute des éléments à une liste stockée dans un fichier JSON.
+    Add command line arguments to a list and save them to a JSON file.
 
-    Cette fonction charge liste d'éléments depuis fichier JSON 'add_item.json'.
-    Elle ajoute arguments passés en CLI (à l'exception du nom du script)
-    à cette liste, sauvegarde la liste mise à jour dans le même fichier JSON.
+    The function loads existing items from 'add_item.json' if it exists,
+    adds any new command line arguments to the list, and saves the
+    updated list back to the file. If the file doesn't exist, it starts
+    with an empty list.
 
-    Si le fichier 'add_item.json' n'existe pas, une nouvelle liste est créée.
-
-    Args:
-    None (utilise les arguments de la ligne de commande via sys.argv)
-
-    Example:
-    Pour ajouter les éléments 'apple' et 'banana' à la liste, exécutez :
-    >>> python script.py apple banana
-    # Le fichier 'add_item.json' contiendra maintenant : ["apple", "banana"]
+    Note:
+        - The first argument (script name) is excluded
+        - The file is created if it doesn't exist
     """
-    filename = "add_item.json"  # Définit nom du fichier JSON
+    filename = "add_item.json"
 
     try:
-        args = load_from_json_file(filename)  # Charger données fichier JSON
+        args = load_from_json_file(filename)
     except FileNotFoundError:
         args = []
 
-    args.extend(argv[1:])  # Ajout argv CLI sauf le premier
+    args.extend(argv[1:])
     save_to_json_file(args, filename)
+
+
+if __name__ == "__main__":
+    add_item()

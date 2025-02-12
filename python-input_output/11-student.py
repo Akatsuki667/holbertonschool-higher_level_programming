@@ -1,37 +1,26 @@
 #!/usr/bin/python3
+"""File I/O Module.
+
+This module provides functionality for writing text content to files using
+UTF-8 encoding.
+"""
 
 
-class Student:
+def write_file(filename="", text=""):
+    """Write string to a text file (UTF-8) and return chars written.
+
+    Args:
+        filename (str, optional): Path to the file. Defaults to empty string.
+        text (str, optional): Content to write. Defaults to empty string.
+
+    Returns:
+        int: Number of characters written to the file.
+
+    Raises:
+        IOError: If file cannot be opened or written to.
+        TypeError: If filename or text are not strings.
     """
-    Classe représentant un étudiant.
+    with open(filename, mode="w", encoding="utf-8") as f:
+        nb_of_char = f.write(text)
 
-    Attributes:
-    first_name (str): Le prénom de l'étudiant.
-    last_name (str): Le nom de famille de l'étudiant.
-    age (int): L'âge de l'étudiant.
-    """
-
-    def __init__(self, first_name, last_name, age):
-        """
-        Initialise nouvel étudiant avec un prénom, un nom de famille et un âge.
-
-        Args:
-        first_name (str): Le prénom de l'étudiant.
-        last_name (str): Le nom de famille de l'étudiant.
-        age (int): L'âge de l'étudiant.
-        """
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
-
-    def to_json(self, attrs=None):
-        """
-        Convertit les attributs de l'objet en un dictionnaire JSON.
-
-        Si une liste d'attributs est fournie, seuls ces attributs seront inclus
-        dans le dictionnaire. Sinon, les attributs de l'objet seront inclus.
-
-        Args:
-        attrs (list, optional): Une liste de noms d'attributs à inclure
-                                dans le dictionnaire JSON. Si None, tous
-        """
+    return (nb_of_char)

@@ -1,22 +1,23 @@
 #!/usr/bin/python3
+"""JSON string parsing module.
 
+This module provides functionality to parse JSON strings into their Python
+object representation.
+"""
 import json
 
 
-def save_to_json_file(my_obj, filename):
-    """
-    Sauvegarde un objet Python dans un fichier au format JSON.
-
-    Cette fonction sérialise un objet Python en JSON et l'écrit dans un fichier
-    Si le fichier existe déjà, il sera écrasé.
+def from_json_string(my_str):
+    """Convert a JSON string to its Python object representation.
 
     Args:
-    my_obj: L'objet Python à sauvegarder.
-    filename (str): Le nom du fichier où l'objet sera sauvegardé.
+        my_str (str): JSON string to be converted.
 
-    Example:
-    >>> save_to_json_file({'name': 'Alice', 'age': 30}, 'data.json')
-    # Le fichier 'data.json' contiendra maintenant:{"name": "Alice", "age": 30}
+    Returns:
+        object: Python data structure (dict, list, str, int, etc).
+
+    Raises:
+        JSONDecodeError: If string is not a valid JSON.
+        TypeError: If my_str is not a string.
     """
-    with open(filename, "w") as f:
-        json.dump(my_obj, f)
+    return json.loads(my_str)

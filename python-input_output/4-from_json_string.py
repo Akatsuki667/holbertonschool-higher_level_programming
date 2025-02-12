@@ -1,25 +1,23 @@
 #!/usr/bin/python3
+"""JSON string parsing module.
 
+This module provides functionality to parse JSON strings into their Python
+object representation.
+"""
 import json
 
 
 def from_json_string(my_str):
-    """
-    Convertit une chaîne de caractères au format JSON en un objet Python.
-
-    Cette fonction utilise le module `json` pour désérialiser une chaîne JSON
-    en un objet Python. La chaîne doit être au format JSON valide.
+    """Convert a JSON string to its Python object representation.
 
     Args:
-        my_str (str): La chaîne de caractères au format JSON à convertir.
+        my_str (str): JSON string to be converted.
 
     Returns:
-        object: L'objet Python résultant de la conversion de la chaîne JSON.
+        object: Python data structure (dict, list, str, int, etc).
 
-    Example:
-        >>> from_json_string('{"name": "Alice", "age": 30}')
-        {'name': 'Alice', 'age': 30}
-        >>> from_json_string('["apple", "banana", "cherry"]')
-        ['apple', 'banana', 'cherry']
+    Raises:
+        JSONDecodeError: If string is not a valid JSON.
+        TypeError: If my_str is not a string.
     """
     return json.loads(my_str)

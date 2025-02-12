@@ -1,24 +1,27 @@
 #!/usr/bin/python3
+"""JSON file reading module.
 
+This module provides functionality to read JSON formatted files and convert
+their content to Python objects.
+"""
 import json
 
 
 def load_from_json_file(filename):
     """
-    Charge un objet Python à partir d'un fichier au format JSON.
-
-    Cette fonction lit fichier JSON, désérialise son contenu en un objet Python
+    Create Python object from JSON file.
 
     Args:
-    filename (str): Le nom du fichier JSON à lire.
+    filename (str): Path to the JSON file to read from.
 
     Returns:
-    object: L'objet Python résultant de la désérialisation du fichier JSON.
+    object: Python data structure representing the JSON content.
 
-    Example:
-    >>> data = load_from_json_file('data.json')
-    >>> print(data)
-    {'name': 'Alice', 'age': 30}
-    """
-    with open(filename, "r") as f:
-        return json.load(f)
+    Raises:
+    FileNotFoundError: If file does not exist.
+    JSONDecodeError: If file content is not valid JSON.
+    IOError: If file cannot be opened or read.
+   """
+    with open(filename, mode="r", encoding="utf-8") as f:
+        object = json.loads(f.read())
+    return object

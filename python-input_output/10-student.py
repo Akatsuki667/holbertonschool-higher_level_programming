@@ -1,49 +1,26 @@
 #!/usr/bin/python3
+"""File I/O Module.
+
+This module provides functionality for writing text content to files using
+UTF-8 encoding.
+"""
 
 
-class Student:
+def write_file(filename="", text=""):
+    """Write string to a text file (UTF-8) and return chars written.
+
+    Args:
+        filename (str, optional): Path to the file. Defaults to empty string.
+        text (str, optional): Content to write. Defaults to empty string.
+
+    Returns:
+        int: Number of characters written to the file.
+
+    Raises:
+        IOError: If file cannot be opened or written to.
+        TypeError: If filename or text are not strings.
     """
-    Classe représentant un étudiant avec ses informations de base.
+    with open(filename, mode="w", encoding="utf-8") as f:
+        nb_of_char = f.write(text)
 
-    Attributes:
-    first_name (str): Le prénom de l'étudiant
-    last_name (str): Le nom de famille de l'étudiant
-    age (int): L'âge de l'étudiant
-    """
-
-    def __init__(self, first_name, last_name, age):
-        """
-        Initialise un nouvel étudiant.
-
-        Args:
-        first_name (str): Le prénom de l'étudiant
-        last_name (str): Le nom de famille de l'étudiant
-        age (int): L'âge de l'étudiant
-        """
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
-
-    def to_json(self, attrs=None):
-        """
-        Retourne une représentation dictionnaire de l'instance Student.
-
-        Args:
-        attrs (list, optional): Liste de chaînes de caractères contenant
-            les noms des attributs à inclure. Si None, tous les attributs
-            sont inclus.
-
-        Returns:
-        dict: Dictionnaire contenant les attributs de l'étudiant.
-            Si attrs est spécifié, seuls les attributs listés sont inclus.
-            Si attrs est None ou invalide, tous les attributs sont inclus.
-
-        Note:
-        - Si attrs est fourni, il doit être une liste de strings
-        - Utilise __dict__ pour accéder aux attributs de l'instance
-        """
-        if (isinstance(attrs, list) and
-                all(isinstance(attr, str) for attr in attrs)):
-            return {key: value for key, value in self.__dict__.items()
-                    if key in attrs}
-        return self.__dict__
+    return (nb_of_char)

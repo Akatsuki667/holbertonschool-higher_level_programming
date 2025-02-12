@@ -1,26 +1,24 @@
 #!/usr/bin/python3
+"""Class to dictionary conversion module.
+
+This module provides functionality to convert Class instances to dictionary
+representation suitable for JSON serialization.
+"""
+
 
 def class_to_json(obj):
     """
-    Convertit un objet en un dictionnaire représentant ses attributs.
-
-    Cette fonction prend un objet et retourne un dictionnaire contenant
-    tous les attributs de cet objet et leurs valeurs associées.
-    Cela peut être utile pour sérialiser un objet en JSON.
+    Convert a Class instance to a dictionary representation.
 
     Args:
-    obj: L'objet dont les attributs doivent être convertis en dictionnaire.
+       obj: Instance of a Class with serializable attributes.
 
     Returns:
-    dict: Un dictionnaire représentant les attributs de l'objet.
+       dict: Dictionary containing instance's attributes and values.
 
-    Example:
-    >>> class Person:
-    ...     def __init__(self, name, age):
-    ...         self.name = name
-    ...         self.age = age
-    >>> person = Person('Alice', 30)
-    >>> class_to_json(person)
-    {'name': 'Alice', 'age': 30}
-    """
+    Note:
+       All attributes must be JSON serializable (dict, list, str, int, etc).
+       Custom classes and complex objects like file handlers will fail.
+   """
     return obj.__dict__
+    # would also work with vars(obj) as long as ev.t. is serializable
