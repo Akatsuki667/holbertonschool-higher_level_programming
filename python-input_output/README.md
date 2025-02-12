@@ -247,13 +247,35 @@ guillaume@ubuntu:~/$ cat add_item.json ; echo ""
 guillaume@ubuntu:~/$ 
 ```
 
-##
+## 8. Class to JSON
+Write a function that returns the dictionary description with simple data structure (list, dictionary, string, integer and boolean) for JSON serialization of an object:
+
 ### Objectives
+- Prototype: `def class_to_json(obj):`
+- `obj` is an instance of a Class
+- All attributes of the `obj` Class are serializable: list, dictionary, string, integer and boolean
+- You are not allowed to import any module
+
 ### Expectation
 ```python3
+#!/usr/bin/python3
+
+def class_to_json(obj):
+    return obj.__dict__
+
 ```
 ### Result
 ```bash
+guillaume@ubuntu:~/$ ./8-main.py 
+<class '8-my_class.MyClass'>
+[MyClass] John - 89
+<class 'dict'>
+{'name': 'John', 'number': 89}
+guillaume@ubuntu:~/$ ./8-main_2.py 
+<class '8-my_class_2.MyClass'>
+[MyClass] John - 4 => 1
+<class 'dict'>
+{'number': 4, '_MyClass__name': 'John', 'is_team_red': True, 'score': 1}
 ```
 
 ##
