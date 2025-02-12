@@ -195,13 +195,56 @@ guillaume@ubuntu:~/$ ./6-main.py
 [JSONDecodeError] Expecting property name enclosed in double quotes: line 1 column 21 (char 20)
 ```
 
-##
+## 7. Load, add, save
+Write a script that adds all arguments to a Python list, and then save them to a file:
+
 ### Objectives
+- You must use your function `save_to_json_file` from `5-save_to_json_file.py`
+- You must use your function `load_from_json_file` from `6-load_from_json_file.py`
+- The list must be saved as a JSON representation in a file named `add_item.json`
+- If the file doesn’t exist, it should be created
+- You don’t need to manage file permissions / exceptions.
+
 ### Expectation
 ```python3
+#!/usr/bin/python3
+
+from sys import argv  # importation ARGV de SYS
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+
+
+def add_item():
+
+    filename = "add_item.json"  # Définit nom du fichier JSON
+
+    try:
+        args = load_from_json_file(filename)  # Charger données fichier JSON
+    except FileNotFoundError:
+        args = []
+
+    args.extend(argv[1:])  # Ajout argv CLI sauf le premier
+    save_to_json_file(args, filename)
+
+
+# Vérification script exécuté (et non importé comme module)
+if __name__ == "__main__":
+    add_item()
 ```
 ### Result
 ```bash
+guillaume@ubuntu:~/$ cat add_item.json
+cat: add_item.json: No such file or directory
+guillaume@ubuntu:~/$ ./7-add_item.py
+guillaume@ubuntu:~/$ cat add_item.json ; echo ""
+[]
+guillaume@ubuntu:~/$ ./7-add_item.py Best School
+guillaume@ubuntu:~/$ cat add_item.json ; echo ""
+["Best", "School"]
+guillaume@ubuntu:~/$ ./7-add_item.py 89 Python C
+guillaume@ubuntu:~/$ cat add_item.json ; echo ""
+["Best", "School", "89", "Python", "C"]
+guillaume@ubuntu:~/$ 
 ```
 
 ##
