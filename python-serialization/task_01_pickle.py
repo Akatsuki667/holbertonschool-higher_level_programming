@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import pickle
 
 
 class CustomObject:
@@ -15,10 +14,19 @@ class CustomObject:
         print(f"Is_tudent: {self.is_student}")
 
     def serialize(self, filename):
-        with open(filename, "wb") as f:
-            pickle_data = pickle.dump(self, f)  # self = obj à sérialiser
+        try:
+            import pickle
+            with open(filename, "wb") as f:
+                pickle_data = pickle.dump(self, f)  # self = obj à sérialiser
+        except (pickle.PickleError, IOError, Exception) as e:
+            return False
 
     @classmethod
     def deserialize(cls, filename):
-        with open(filename, "rb") as f:
-            return pickle.load(f)
+        try:
+            import pickle
+            with open(filename, "rb") as f:
+                return pickle.load(f)
+        except (FileNotFoundError, pickle.PicklingError,
+                IOError, Exception) as e:
+            return None
