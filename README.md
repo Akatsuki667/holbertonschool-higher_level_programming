@@ -589,3 +589,25 @@
 ### 1. Pickling Custom Classes
 ### 2. Converting CSV Data to JSON Format
 ### 3. Serializing and Deserializing with XML
+
+
+# RESTful API
+
+## Introduction
+In the evolving world of software development, understanding how to communicate and transfer data efficiently between systems is essential. This project delves into the domain of RESTful APIs, a cornerstone in the realm of web services. The Representational State Transfer (REST) architecture is a set of constraints that ensure a scalable, stateless, and cacheable communication system. This approach allows for the easy integration of web services, making them accessible to a wide range of applications.
+
+## Learning Objectives
+- __HTTP/HTTPS Basics__: Grasp the foundational principles of the web’s primary protocol, understanding how data transfer occurs, methods involved, and the difference between the secure and non-secure versions.
+- __API Consumption with Command Line__: Hands-on experience in interacting with APIs using basic command-line tools, laying the groundwork for more advanced interactions.
+- __API Consumption with Python__: Elevate your data fetching skills by leveraging Python’s capabilities, allowing for more advanced processing and data manipulation.
+- __API Development with http.server__: Understand the basics of crafting an API from scratch using Python’s built-in modules, setting a solid foundation.
+- __API Development with Flask__: Dive deeper into API development using the lightweight Flask framework, focusing on routing, data management, and scalability.
+- __API Security & Authentication__: Address the crucial aspect of security, understanding how to protect data transfer and ensure only authorized access to resources.
+- __API Standards & Documentation with OpenAPI__: Conclude with the importance of maintaining standardized documentation, ensuring that APIs are usable, understandable, and maintainable.
+
+## TASKS
+
+### 2. Consuming and processing data from an API using Python
+### 3. Develop a simple API using Python with the `http.server` module
+### 4. Develop a Simple API using Python with Flask
+### 5. API Security and Authentication Techniques
