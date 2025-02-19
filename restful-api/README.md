@@ -1,7 +1,10 @@
 # RESTful API
 
 ## 2. Consuming and processing data from an API using Python
-Python, due to its readability and a vast library ecosystem, is a popular choice for interacting with web services and APIs. The `requests` library simplifies HTTP communication and allows users to send HTTP requests using Python. Once the data is fetched, Python’s built-in libraries and tools enable effortless data manipulation and processing.
+- At the end of this exercise, students should be able to:
+    - Utilize the `requests` library to send HTTP requests and process responses.
+    - Parse and manipulate JSON data using Python.
+    - Convert structured data into other formats, e.g., CSV.
 
 ### Instructions
 - If not installed, install the `requests` library using pip: `pip install requests`.
@@ -63,15 +66,74 @@ nesciunt quas odio
 ...
 ```
 
-##
+## 3. Develop a simple API using Python with the `http.server` module
+- At the end of this exercise, students should be able to:
+    - Set up a basic web server using the `http.server` module.
+    - Handle different types of HTTP requests (GET, POST, etc.).
+    - Serve JSON data in response to specific endpoints.
 
 ### Instructions
+- Setting Up a Basic HTTP Server:
+    - Use the `http.server` module to set up a simple HTTP server. Start by creating a subclass of `http.server.BaseHTTPRequestHandler`.
+    - Implement the `do_GET` method to handle GET requests. Within this method, send a simple text response back to the client: “Hello, this is a simple API!”.
+    - Start the server on a specific port (8000) and test it by visiting `http://localhost:8000` in your browser or using `curl`.
+- Serving JSON Data:
+    - Modify the do_GET method in your server class to serve a sample JSON data when the endpoint `/data` is accessed.
+    - You should return a simple dataset: `{"name": "John", "age": 30, "city": "New York"}`.
+    - Ensure that the correct content type (`application/json`) header is set in the response.
+- Handling Different Endpoints:
+Add an /status endpoint to check the API status. It shoud return `OK`.
+Implement error handling. If the user tries to access an undefined endpoint, return a 404 Not Found status with an appropriate message.
 
 ### Expectation
-```python3
-```
-### Result
-```bash
+```python
+#!/usr/bin/python3
+from http.server import HTTPServer, BaseHTTPRequestHandler
+import json
+
+
+class SimpleAPIHandler(BaseHTTPRequestHandler):
+
+    def do_GET(self):
+        if self.path == "/":
+            self.send_response(200)
+            self.send_header("Content-type", "text/html")
+            self.end_headers()
+            self.wfile.write(b"Hello, this is a simple API!")
+        elif self.path == "/data":
+            self.send_response(200)
+            self.send_header("Content-type", "application/json")
+            self.end_headers()
+            data = {"name": "John", "age": 30, "city": "New York"}
+            self.wfile.write(json.dumps(data).encode("utf-8"))
+        elif self.path == "/status":
+            self.send_response(200)
+            self.send_header("Content-type", "text/html")
+            self.end_headers()
+            self.wfile.write(b"OK")
+        elif self.path == "/info":
+            self.send_response(200)
+            self.send_header("Content-type", "application/json")
+            self.end_headers()
+            info = {"version": "1.0", "description":
+                    "A simple API built with http.server"}
+            self.wfile.write(json.dumps(info).encode())
+        else:
+            self.send_response(404)
+            self.send_header("Content-type", "text/html")
+            self.end_headers()
+            self.wfile.write(b"Endpoint not found")
+
+
+def AccesServer():
+    PORT = 8000
+    server = HTTPServer(('', PORT), SimpleAPIHandler)
+    print(f"Server running on port {PORT}")
+    server.serve_forever()
+
+
+if __name__ == "__main__":
+    AccesServer()
 ```
 
 ##

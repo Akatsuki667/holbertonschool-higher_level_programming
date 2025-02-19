@@ -32,4 +32,4 @@ def fetch_and_save_posts():
             writer.writerows(filtered_posts)
 
     else:
-        print("Échec de la requête, code:", response.status_code)
+        print(f"Échec de la requête, code: {response.status_code}")
