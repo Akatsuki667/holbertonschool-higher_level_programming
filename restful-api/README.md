@@ -136,16 +136,79 @@ if __name__ == "__main__":
     AccesServer()
 ```
 
-##
+## 4. Develop a Simple API using Python with Flask
+At the end of this exercise, students should be able to: 1. Set up a Flask application and run a development server. 2. Define and handle routes with Flask to respond to different endpoints. 3. Serve JSON data using Flask. 4. Understand the basics of request handling and response formation in Flask. 5. Handle POST requests to add new data to the API.
 
 ### Instructions
+- Setting Up Flask:
+    - Install Flask using pip: `pip install Flask`.
+    - Create a new Python file and import Flask: `from flask import Flask`.
+    - Instantiate a Flask web server from the Flask module: `app = Flask(__name__)`.
+- Creating Your First Endpoint:
+    Define a route for the root URL (“/”) and create a function (`def home():`) to handle this route. Within the function, return a string: “Welcome to the Flask API!”.
+    Run the Flask development server with: `if __name__ == "__main__": app.run()`.
+    Visit `http://localhost:5000` in your browser or use `curl` to see the message.
+- Serving JSON Data:
+    - Import the `jsonify` function from Flask: `from flask import jsonify`.
+    - Create a new route `/data` and associate a function with it. Inside this function, return a JSON response using `jsonify()`. This should return a list of all the usernames stored in the API.
+    - Users will be stored in memory using a dictionary with `username` as the key and the whole object (dictionary) as the value.
+    - Example dictionary: `users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}`
+- Expanding Your API:
+    - Add a few more endpoints to simulate different functionalities:
+    - `/status`: It should return `OK`.
+    - `/users/<username>`: Returns the full object corresponding to the provided `username`. (Hint: Use Flask’s dynamic route feature)
+- Handling POST Requests:
+    - Import the request object from Flask: from flask import request.
+    - Create a new route `/add_user` that accepts POST requests.
+    - This route should:
+        - Parse the incoming JSON data. Example data: `{"username": "john", "name": "John", "age": 30, "city": "New York"}`
+        - Add the new user to the users dictionary using `username` as the key.
+        - Return a confirmation message with the added user’s data.
 
 ### Expectation
-```python3
+```python
+#!/usr/bin/python3
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+users = {"jane": {"name": "Jane", "age": 115, "city": "Los Angeles"}}
+
+@app.route("/")
+def home():
+    return ("Welcome to the Flask API!")
+
+@app.route("/data")
+def data():
+    return jsonify(users)
+
+@app.route("/status")
+def status():
+    return "OK"
+
+@app.route("/users/<username>")
+def get_user(username):
+    if username in users:
+        dictionary = users[username]
+        dictionary.update({"username": username})
+        return jsonify(dictionary)
+    else:
+        return {"error": "User not found"}, 404
+
+@app.route("/add_user", methods=['POST'])
+def add_user():
+    data = request.get_json()
+    if not data or 'username' not in data:
+        return jsonify({"error": "Username is required"}), 400
+    new_user = {
+        data.get('username'): {
+            key: value for key, value in data.items() if key != "username"}}
+    users.update(new_user)
+    return jsonify(new_user), 201
+
+if __name__ == "__main__": app.run()
 ```
-### Result
-```bash
-```
+
 
 ##
 
