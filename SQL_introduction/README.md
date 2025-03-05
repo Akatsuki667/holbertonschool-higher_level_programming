@@ -54,13 +54,12 @@ Write a script that deletes the database `hbtn_0c_0` in your MySQL server.
 ```sql
 -- delete
 -- database hbtn_0c_0
-DROP DATABASE IF NOT EXISTS hbtn_0c_0;
+DROP DATABASE IF EXISTS hbtn_0c_0;
 ```
 ### Result
 ```bash
 Enter password: 
 Database
-hbtn_0c_0
 information_schema
 mysql
 performance_schema
