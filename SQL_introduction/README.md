@@ -163,4 +163,146 @@ SHOW CREATE TABLE first_table;
 ```
 ### Result
 ```bash
+Enter password: 
+Table   Create Table                                                                         
+first_table     CREATE TABLE `first_table` (\n  `id` int DEFAULT NULL,\n  `name` varchar(256) DEFAULT NULL\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+```
+
+## 6. List all in table
+Write a script that lists all rows of the table `first_table` from the database `hbtn_0c_0` in your MySQL server.
+
+### Objectives
+- All fields should be printed
+- The database name will be passed as an argument of the `mysql` command
+
+### Expectation
+```sql
+-- select
+-- all rows of first_tables
+SELECT * FROM first_table;
+```
+### Result
+```bash
+Enter password: 
+➜  SQL_introduction git:(main) ✗
+```
+
+## 7. First add
+Write a script that inserts a new row in the table `first_table` (database `hbtn_0c_0`) in your MySQL server.
+
+### Objectives
+- New row:
+    - `id` = 89
+    - `name` = Best School
+The database name will be passed as an argument of the mysql command
+
+### Expectation
+```sql
+-- insert
+-- new value into first_name
+INSERT INTO first_table (id, nom) VALUES ('89', 'Best School');
+```
+### Result
+```bash
+id      nom
+89      Best School
+```
+
+##
+
+### Objectives
+
+### Expectation
+```sql
+```
+### Result
+```bash
+```
+
+##
+
+### Objectives
+
+### Expectation
+```sql
+```
+### Result
+```bash
+```
+
+##
+
+### Objectives
+
+### Expectation
+```sql
+```
+### Result
+```bash
+```
+
+##
+
+### Objectives
+
+### Expectation
+```sql
+```
+### Result
+```bash
+```
+
+##
+
+### Objectives
+
+### Expectation
+```sql
+```
+### Result
+```bash
+```
+
+##
+
+### Objectives
+
+### Expectation
+```sql
+```
+### Result
+```bash
+```
+
+##
+
+### Objectives
+
+### Expectation
+```sql
+```
+### Result
+```bash
+```
+
+##
+
+### Objectives
+
+### Expectation
+```sql
+```
+### Result
+```bash
+```
+
+##
+
+### Objectives
+
+### Expectation
+```sql
+```
+### Result
+```bash
 ```
