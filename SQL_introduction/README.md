@@ -216,6 +216,9 @@ The database name will be passed as an argument of the `mysql` command
 
 ### Expectation
 ```sql
+-- count
+--  number of records
+SELECT COUNT(*) FROM first_table WHERE id = 89;
 ```
 ### Result
 ```bash
