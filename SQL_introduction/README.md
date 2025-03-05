@@ -5,6 +5,8 @@ Write a script that lists all databases of your MySQL server.
 
 ### Expectation
 ```sql
+-- show
+-- list database
 SHOW DATABASES;
 ```
 ### Result
@@ -16,3 +18,5 @@ mysql
 performance_schema
 sys
 ```
+
+## 
