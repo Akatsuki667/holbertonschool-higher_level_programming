@@ -611,3 +611,35 @@ In the evolving world of software development, understanding how to communicate 
 ### 3. Develop a simple API using Python with the `http.server` module
 ### 4. Develop a Simple API using Python with Flask
 ### 5. API Security and Authentication Techniques
+
+
+# SQL - Introduction
+
+## Learning Objectives
+
+### General
+- What’s a database
+- What’s a relational database
+- What does SQL stand for
+- What’s MySQL
+- How to create a database in MySQL
+- What does `DDL` and `DML` stand for
+- How to `CREATE` or `ALTER` a table
+How to SELECT data from a table
+How to `INSERT`, `UPDATE` or `DELETE` data
+What are subqueries
+How to use MySQL functions
+
+## Requirements
+
+### General
+- All your files should end with a new line
+- All your SQL queries should have a comment just before (i.e. syntax above)
+- All your files should start by a comment describing the task
+- All SQL keywords should be in uppercase (`SELECT`, `WHERE`…)
+- A `README.md` file, at the root of the folder of the project, is mandatory
+- The length of your files will be tested using `wc`
+
+## TASKS
+
+### 0. List databases
