@@ -136,9 +136,9 @@ Write a script that creates a table called `first_table` in the current database
 ```sql
 -- create
 -- table first_table
-CREATE TABLE IF NOT EXISTS first_table(
+CREATE TABLE IF NOT EXISTS first_table (
     id INT,
-    nom VARCHAR(256)
+    name VARCHAR(256)
 );
 ```
 ### Result
@@ -147,3 +147,5 @@ Enter password:
 Tables_in_hbtn_0c_0
 first_table
 ```
+
+## 5. Full description
