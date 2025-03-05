@@ -646,3 +646,4 @@ How to use MySQL functions
 ### 1. Create a database
 ### 2. Delete a database
 ### 3. List tables
+### 4. First table
