@@ -404,13 +404,30 @@ score   number
 8   1
 ```
 
-##
+## 16. Say my name
+Write a script that lists all records of the table `second_table` of the database `hbtn_0c_0` in your MySQL server.
 
 ### Objectives
+- Don’t list rows where the `name` column does not contain a value
+- Results should display the score and the name (in this order)
+- Records should be listed by descending score
+- The database name will be passed as an argument to the `mysql` command
 
 ### Expectation
 ```sql
+-- lists
+-- records of second_table
+SELECT score, name
+FROM second_table
+WHERE name IS NOT NULL AND name <> ''
+ORDER BY score DESC
 ```
 ### Result
 ```bash
+Enter password: 
+score   name
+18  Aria
+12  Aria
+10  John
+10  Bob
 ```
