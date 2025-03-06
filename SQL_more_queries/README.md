@@ -171,38 +171,55 @@ CREATE TABLE IF NOT EXISTS cities (
     FOREIGN KEY (state_id) REFERENCES states(id)
 );
 ```
-### Result
-```bash
-```
 
-##
+## 8. Cities of California
+Write a script that lists all the cities of California that can be found in the database `hbtn_0d_usa`.
 
 ### Objectives
+The states table contains only one record where name = California (but the id can be different, as per the example)
+Results must be sorted in ascending order by cities.id
+You are not allowed to use the JOIN keyword
+The database name will be passed as an argument of the mysql command
+
 ### Expetations
 ```sql
-```
-### Result
-```bash
+SELECT id, name FROM cities WHERE state_id = (SELECT id FROM states WHERE name = 'California') ORDER BY id;
 ```
 
-##
+## 9. Cities by States
+Write a script that lists all cities contained in the database `hbtn_0d_usa`.
 
 ### Objectives
+- Each record should display: `cities.id` - `cities.name` - `states.name`
+- Results must be sorted in ascending order by `cities.id`
+- You can use only one `SELECT` statement
+- The database name will be passed as an argument of the mysql command
+
 ### Expetations
 ```sql
-```
-### Result
-```bash
+-- lists cities 
+SELECT cities.id, cities.name, states.name
+FROM cities, states
+WHERE cities.state_id = states.id
+ORDER BY cities.id;
 ```
 
-##
+## 10. Genre ID by show
+Write a script that lists all shows contained in `hbtn_0d_tvshows` that have at least one genre linked.
 
 ### Objectives
+- Each record should display: `tv_shows.title` - `tv_show_genres.genre_id`
+- Results must be sorted in ascending order by `tv_shows.title` and `tv_show_genres.genre_id`
+- You can use only one `SELECT` statement
+- The database name will be passed as an argument of the `mysql` command
+
 ### Expetations
 ```sql
-```
-### Result
-```bash
+-- lists all show
+SELECT tv_shows.title, tv_show_genres.genre_id
+FROM tv_shows, tv_show_genres
+WHERE tv_shows.id = tv_show_genres.show_id
+ORDER BY tv_shows.title, tv_show_genres.genre_id;
 ```
 
 ##
