@@ -71,11 +71,23 @@ GRANT USAGE ON *.* TO `user_0d_2`@`localhost`
 GRANT SELECT ON `hbtn_0d_2`.* TO `user_0d_2`@`localhost`
 ```
 
-##
+## 3. Always a name
+Write a script that creates the table `force_name` on your MySQL server.
 
 ### Objectives
+- `force_name` description:
+    - `id` INT
+    - `name` VARCHAR(256) can’t be null
+- The database name will be passed as an argument of the `mysql` command
+- If the table `force_name` already exists, your script should not fail
+
 ### Expetations
 ```sql
+-- création table force_name
+CREATE TABLE IF NOT EXISTS force_name (
+    id INT,
+    name VARCHAR(256) NOT NULL
+);
 ```
 ### Result
 ```bash
