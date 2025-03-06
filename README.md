@@ -656,6 +656,6 @@ How to use MySQL functions
 ### 11. Select the best
 ### 12. Cheating is bad
 ### 13. Score too low
-###
-###
-###
+### 14. Average
+### 15. Number by score
+### 16. Say my name
