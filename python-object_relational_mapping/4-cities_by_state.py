@@ -1,37 +1,48 @@
 #!/usr/bin/python3
 """
-Lists all cities from the database hbtn_0e_4_usa
-Usage: ./4-cities_by_state.py
+Script that lists all cities from the database hbtn_0e_4_usa.
+Takes 3 arguments: mysql username, mysql password and database name.
 """
-import sys
 import MySQLdb
+import sys
+
 
 if __name__ == "__main__":
-    # Connexion à la base de données MySQL
+    """
+    Main function that will not execute when imported.
+    Lists all cities from the database with their corresponding state names.
+    """
+    # Get MySQL connection parameters from command line arguments
+    username = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+
+    # Connect to MySQL server
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3]
+        user=username,
+        passwd=password,
+        db=db_name
     )
 
-    # Création d'un curseur pour exécuter les requêtes SQL
-    cur = db.cursor()
+    # Create a cursor object
+    cursor = db.cursor()
 
-    # Exécution de la requête SQL (jointure entre cities et states)
-    query = """
-        SELECT cities.id, cities.name, states.name
-        FROM cities
-        JOIN states ON cities.state_id = states.id
-        ORDER BY cities.id ASC
-    """
-    cur.execute(query)
+    # Execute the query to get all cities with their state names
+    query = ("SELECT cities.id, cities.name, states.name "
+             "FROM cities "
+             "JOIN states ON cities.state_id = states.id "
+             "ORDER BY cities.id ASC")
+    cursor.execute(query)
 
-    # Récupération et affichage des résultats
-    for row in cur.fetchall():
-        print(row)
+    # Fetch all the results
+    cities = cursor.fetchall()
 
-    # Fermeture du curseur et de la connexion
-    cur.close()
+    # Print the results
+    for city in cities:
+        print(city)
+
+    # Close cursor and database connection
+    cursor.close()
     db.close()

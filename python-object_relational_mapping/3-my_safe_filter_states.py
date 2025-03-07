@@ -1,32 +1,50 @@
 #!/usr/bin/python3
 """
-Lists all states
-Usage: ./3-my_safe_filter_states.py
+Script that displays all values in the states table of hbtn_0e_0_usa
+where name matches the provided argument, safe from MySQL injections.
+Takes 4 arguments: mysql username, mysql password, database name, and state
+name.
 """
-import sys
+
 import MySQLdb
+import sys
+
 
 if __name__ == "__main__":
-    # Connexion à la base de données MySQL
+    """
+    Main function that will not execute when imported.
+    Displays values in states table where name matches the given argument,
+    using parameterized queries to prevent SQL injection.
+    """
+    # Get MySQL connection parameters and state name from CLI arguments
+    username = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+    state_name = sys.argv[4]
+
+    # Connect to MySQL server
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3]
+        user=username,
+        passwd=password,
+        db=db_name
     )
 
-    # Création d'un curseur pour exécuter les requêtes SQL
-    cur = db.cursor()
+    # Create a cursor object
+    cursor = db.cursor()
 
-    # Exécution de la requête SQL
+    # Execute the query using parameterized query to prevent SQL injection
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cur.execute(query, (state_name,))
+    cursor.execute(query, (state_name,))
 
-    # Récupération et affichage des résultats
-    for row in cur.fetchall():
-        print(row)
+    # Fetch all the results
+    states = cursor.fetchall()
 
-    # Fermeture du curseur et de la connexion
-    cur.close()
+    # Print the results
+    for state in states:
+        print(state)
+
+    # Close cursor and database connection
+    cursor.close()
     db.close()
