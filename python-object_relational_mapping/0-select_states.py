@@ -1,23 +1,35 @@
 #!/usr/bin/python3
-"""Lists all states from the database hbtn_0e_0_usa"""
+
+"""
+This script connects to a MySQL database
+and lists all states from the 'states' table,
+ordered by 'id'. It takes three arguments:
+MySQL username, password, and database name.
+"""
+
+
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(
+
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+
+    mydb = MySQLdb.connect(
         host="localhost",
-        port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3]
-    )
+        user=username,
+        password=password,
+        database=database
+        )
 
-cur = db.cursor()
+    cursor = mydb.cursor()
 
-cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
-for row in cur.fetchall():
-    print(row)
+    for state in cursor.fetchall():
+        print(state)
 
-cur.close()
-db.close()
+    cursor.close()
+    mydb.close()
