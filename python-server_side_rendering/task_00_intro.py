@@ -6,9 +6,9 @@ def generate_invitations(template, attendees):
     if type(attendees) is not list:
         raise TypeError("Attendees must be a list")
 
-    if not template:
+    if template == "":
         raise ValueError("Template is empty, no output files generated.")
-    if not attendees:
+    if attendees == []:
         raise ValueError("No data provided, no output files generated.")
 
     for idx, attendee in enumerate(attendees, 1):
