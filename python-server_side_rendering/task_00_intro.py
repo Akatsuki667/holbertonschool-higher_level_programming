@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
 def generate_invitations(template, attendees):
-    if type(template) is not str:
+    if not isinstance(template, str):
         raise TypeError("Template must be a string")
-    if type(attendees) is not list:
+    if not isinstance(attendees, list):
         raise TypeError("Attendees must be a list")
 
     if template == "":
