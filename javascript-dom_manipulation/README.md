@@ -28,3 +28,12 @@ Write a JavaScript script that adds the class `red` to the `header` element when
     - You must use the `Fetch API`.
     - You probably should read something about `usign Promises` later.
 
+## 7. Star Wars movies
+- Write a JavaScript script that fetches and lists the `title` for all movies by using this URL: `https://swapi-api.hbtn.io/api/films/?format=json`
+    - All movie titles must be list in the HTML `ul` element with id `list_movies`
+    - You must use the Fetch API.
+
+## 8. Say Hello!
+- Write a JavaScript script that fetches from `https://hellosalut.stefanbohacek.dev/?lang=fr` and displays the value of hello from that fetch in the HTML element with id `hello`.
+    - The translation of “hello” must be displayed in the HTML element with id `hello`
+    - Your script must work when it is imported from the <head> tag
