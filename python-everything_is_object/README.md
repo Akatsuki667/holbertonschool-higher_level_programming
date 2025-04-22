@@ -28,3 +28,4 @@
 ## 25. Tuple or not
 ## 26. Empty is not empty
 ## 27-answer.txt
+## 28. Same or not?
